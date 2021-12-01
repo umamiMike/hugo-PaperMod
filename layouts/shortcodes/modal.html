@@ -1,0 +1,9 @@
+<button id="modalBtn">{{ index .Params 0 }}</button>
+<!-- The Modal -->
+<div class="relevant-info">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h1>{{ index .Params 0 }}</h1>
+    {{ .Inner }}
+  </div>
+</div>

@@ -193,6 +193,10 @@
     display: none;
 }
 
+.post-content .highlight span {
+    background: 0 0 !important;
+}
+
 .post-content code {
     margin: auto 4px;
     padding: 4px 6px;
@@ -260,11 +264,12 @@
 .toc {
     margin: 0 2px 40px 2px;
     border: 1px solid var(--border);
-    background: var(--entry);
+    background: var(--code-bg);
     border-radius: var(--radius);
     padding: 0.4em;
 }
 
+<<<<<<< HEAD
 .toc-container.wide {
     position: absolute;
     height: 100%;
@@ -341,6 +346,7 @@
 .paginav {
     border-radius: var(--radius);
     background: var(--code-bg);
+    border: 1px solid var(--border);
 }
 
 .post-tags a {
@@ -354,7 +360,7 @@
 }
 
 .post-tags a:hover {
-    background: var(--border);
+    background: var(--code-bg);
 }
 
 .share-buttons {

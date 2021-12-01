@@ -131,5 +131,28 @@
             codeblock.parentNode.appendChild(copybutton);
         }
     });
+
+window.onload = function() {
+
+  var config = {
+    securityLevel: 'loose',
+    nodeSpacing: 100,
+    loglevel: 1,
+    flowchart: {
+      rankSpacing: 100,
+      diagramPadding: 8,
+    },
+  sequence: {
+    boxTextMargin: 20,
+    noteMargin: 10,
+    messageMargin: 35,
+    mirrorActors: true
+},
+    theme: 'neutral',
+  themeVariables: {},
+  };
+
+mermaid.initialize(config);
+
 </script>
 {{- end }}

@@ -95,6 +95,9 @@
 {{- end }}
 {{- end }}
 
+{{- $mermaid := slice (resources.Get "js/mermaid.min.js") | resources.Concat "assets/js/mermaid.js" | minify | fingerprint }}
+<script defer crossorigin="anonymous" src="{{ $mermaid.RelPermalink }}" integrity="{{ $mermaid.Data.Integrity }}"></script>
+
 {{- /* Favicons */}}
 <link rel="icon" href="{{ .Site.Params.assets.favicon | default "favicon.ico" | absURL }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.assets.favicon16x16 | default "favicon-16x16.png" | absURL }}">
@@ -160,6 +163,7 @@
 {{- /* Misc */}}
 {{- if hugo.IsProduction | or (eq .Site.Params.env "production") }}
 {{- template "_internal/google_analytics.html" . }}
+{{- template "_internal/google_news.html" . }}
 {{- template "partials/templates/opengraph.html" . }}
 {{- template "partials/templates/twitter_cards.html" . }}
 {{- template "partials/templates/schema_json.html" . }}

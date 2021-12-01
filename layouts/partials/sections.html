@@ -1,0 +1,10 @@
+<nav>
+    <ul>
+        {{ range .Site.Sections }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title}}</a>
+                 {{ partial "sections-recursive.html" . }}
+            </li>
+        {{ end }}
+    </ul>
+</nav>

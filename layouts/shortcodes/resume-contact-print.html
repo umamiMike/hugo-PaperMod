@@ -1,0 +1,20 @@
+<div class="print-contact">
+  <h1 class="">Michael Wilding</h1>
+  <a href="https://twitter.com/{{ .Site.Params.twitterhandle }}">
+    <span class="float-left"> {{ .Site.Params.twittericon | safeHTML }} </span>
+    <p class="bold">{{ .Site.Params.twitterhandle }}</p>
+  </a>
+  <a href="mailto:{{ .Site.Params.email }}">
+    <span class="float-left"> {{ .Site.Params.emailicon | safeHTML }} </span>
+    heymichaelwilding@gmail.com 
+  </a>
+
+  <a href="tel:5039570099">
+    <span class="float-left"> {{ .Site.Params.phoneicon | safeHTML }} </span>
+  <p>503-957-0099</p>
+  </a>
+  <a href="https://github.com/{{ .Site.Params.gituser }}">
+    <span class="float-left"> {{ .Site.Params.ghicon | safeHTML }} </span>
+    <p class="bold">{{ .Site.Params.gituser }}</p>
+  </a>
+</div>
