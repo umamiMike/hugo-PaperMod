@@ -1,0 +1,6 @@
+<ul class="terms-tags">
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ partial "sections-recursive.html" . }}
+        </li>
+</ul>

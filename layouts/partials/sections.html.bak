@@ -1,9 +1,13 @@
 <nav>
-    <ul>
+    <ul class= "terms-tags" >
+      <pre>
+{{ . }}
+      </pre>
+
         {{ range .Site.Sections }}
             <li>
                 <a href="{{ .Permalink }}">{{ .Title}}</a>
-                 {{ partial "sections-recursive.html" . }}
+                 <!-- {{ partial "sections-recursive.html" . }} -->
             </li>
         {{ end }}
     </ul>

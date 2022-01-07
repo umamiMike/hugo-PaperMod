@@ -1,0 +1,11 @@
+<ul class="terms-tags">
+    {{- range $key, $value := .Site.Data.Terms.Alphabetical }}
+    {{- $name := .Name }}
+    {{- $count := .Count }}
+    {{- with $.Site.GetPage (printf "/%s" $name) }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+    </li>
+    {{- end }}
+    {{- end }}
+</ul>

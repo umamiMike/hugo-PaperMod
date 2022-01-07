@@ -4,6 +4,7 @@
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
 
+
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
@@ -20,24 +21,22 @@
 <div class="post-content">
   {{- if not (.Param "disableAnchoredHeadings") }}
   {{- partial "anchored_headings.html" .Content -}}
+
   {{- else }}{{ .Content }}{{ end }}
 </div>
 {{- end }}
 
-{{- $pages := union .RegularPages .Sections }}
+<!-- {{- $pages := union .RegularPages .Sections }} -->
 
-{{- if .IsHome }}
-{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{- end }}
 
 {{- $paginator := .Paginate $pages }}
-
 {{- if and .IsHome .Site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
 {{- partial "home_info.html" . }}
 {{- end }}
 
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
+
 
 {{- $class := "post-entry" }}
 
@@ -53,7 +52,8 @@
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
     <h2>
-      {{- .Title }}
+      {{- if  .Title }} {{- .Title }}
+      {{- else }} {{.File.TranslationBaseName}} {{- end }}
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
     </h2>
   </header>

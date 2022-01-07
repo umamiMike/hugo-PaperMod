@@ -1,6 +1,6 @@
 :root {
     --gap: 16px;
-    --content-gap: 20px;
+    --content-gap: 8px;
     --nav-width: 1280px;
     --main-width: 1280px;
     --header-height: 60px;

@@ -98,6 +98,13 @@
 {{- $mermaid := slice (resources.Get "js/mermaid.min.js") | resources.Concat "assets/js/mermaid.js" | minify | fingerprint }}
 <script defer crossorigin="anonymous" src="{{ $mermaid.RelPermalink }}" integrity="{{ $mermaid.Data.Integrity }}"></script>
 
+{{- $svgPanZoom := slice (resources.Get "js/svg-pan-zoom.js") | resources.Concat "assets/js/svg-pan-zoom.js" | fingerprint }}
+<script defer crossorigin="anonymous" src="{{ $svgPanZoom.RelPermalink }}" integrity="{{ $svgPanZoom.Data.Integrity }}"></script>
+
+{{- $hammer := slice (resources.Get "js/hammer.js") | resources.Concat "assets/js/hammer.js" | fingerprint }}
+<script defer crossorigin="anonymous" src="{{ $hammer.RelPermalink }}" integrity="{{ $hammer.Data.Integrity }}"></script>
+
+
 {{- /* Favicons */}}
 <link rel="icon" href="{{ .Site.Params.assets.favicon | default "favicon.ico" | absURL }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.assets.favicon16x16 | default "favicon-16x16.png" | absURL }}">
