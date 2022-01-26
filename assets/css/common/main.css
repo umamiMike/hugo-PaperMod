@@ -2,12 +2,14 @@
     position: relative;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
     max-width: var(--main-width);
-    margin: auto;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
     padding: var(--gap);
 }
 
 .main.page {
-    max-width: calc(var(--article-width) + var(--gap) * 2);
+    max-width: var(--main-width);
 }
 
 .page-header h1 {

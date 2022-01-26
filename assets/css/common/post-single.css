@@ -1,6 +1,16 @@
+html {
+  height: 100%;
+}
+
+.post-single {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .page-header,
 .post-header {
-  margin: 24px auto var(--content-gap) auto;
+  margin-bottom: calc(var(--gap) * 2);
 }
 
 .post-title {
@@ -34,30 +44,31 @@
 
 .post-content {
   color: var(--content);
-}
-
-.post-content h3,
-.post-content h4,
-.post-content h5,
-.post-content h6 {
+  flex-grow: 3;
 }
 
 .post-content h1 {
-  margin: 40px auto 32px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   font-size: 40px;
 }
 
 .post-content h2 {
-  margin: 32px auto 24px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   font-size: 32px;
 }
 
 .post-content h3 {
   font-size: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .post-content h4 {
   font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .post-content h5 {
@@ -67,6 +78,7 @@
 .post-content h6 {
   font-size: 12px;
 }
+.post-content p
 
 .post-content a,
 .toc a:hover {
@@ -90,7 +102,7 @@
 .post-content p,
 .post-content figure,
 .post-content ul {
-  margin-bottom: var(--content-gap);
+  margin-bottom: calc(var(--content-gap) * 2);
 }
 
 .post-content ol,
@@ -336,7 +348,8 @@
 }
 
 .post-footer {
-  margin-top: 56px;
+  margin-top: 164px;
+
 }
 
 .post-tags li {
@@ -354,7 +367,6 @@
 }
 
 .post-tags a {
-<<<<<<< HEAD
     display: block;
     padding-inline-start: 14px;
     padding-inline-end: 14px;
@@ -366,7 +378,6 @@
 
 .post-tags a:hover {
     background: var(--code-bg);
-=======
   display: block;
   padding-inline-start: 14px;
   padding-inline-end: 14px;
@@ -379,11 +390,10 @@
 .post-tags a:hover,
 .paginav a:hover {
   background: var(--border);
->>>>>>> 1a5a945b (squashed-work)
 }
 
 .share-buttons {
-  margin: 14px 0;
+  margin-top: calc(var(--gap) * 2);
   padding-inline-start: var(--radius);
   display: flex;
   justify-content: center;
@@ -415,18 +425,15 @@ h3:hover .anchor,
 h4:hover .anchor,
 h5:hover .anchor,
 h6:hover .anchor {
-<<<<<<< HEAD
-    display: inline-flex;
-    color: var(--secondary);
-    margin-inline-start: 8px;
-    font-weight: 500;
-    user-select: none;
-=======
   display: inline-flex;
   color: var(--secondary);
   margin-inline-start: 8px;
   font-weight: 500;
->>>>>>> 1a5a945b (squashed-work)
+  user-select: none;
+  display: inline-flex;
+  color: var(--secondary);
+  margin-inline-start: 8px;
+  font-weight: 500;
 }
 
 .post-content :not(table) ::-webkit-scrollbar-thumb {

@@ -27,6 +27,10 @@ body {
     line-height: 1.5em;
     word-break: break-word;
     background: var(--theme);
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
 }
 
 article,
