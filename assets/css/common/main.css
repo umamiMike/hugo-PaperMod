@@ -6,6 +6,21 @@
     margin-inline-start: auto;
     margin-inline-end: auto;
     padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--gap) / 2);
+  margin-bottom: var(--gap);
+
+}
+.sections .post-entry {
+  margin-bottom: 0px;
+  padding: calc(var(--gap) / 2);
+  border-radius: calc(var(--radius) / 2);
 }
 
 .main.page {

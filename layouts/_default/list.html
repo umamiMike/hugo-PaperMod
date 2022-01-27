@@ -1,5 +1,4 @@
 {{- define "main" }}
-Default list partial
 
 {{- if (and .Site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
@@ -27,12 +26,37 @@ Default list partial
   </div>
   {{- end }}
 
-{{- $pages := union .RegularPages .Sections }}
+
+{{- end }}
+{{- $pages := .RegularPages }}
 
 {{- $paginator := .Paginate $pages }}
   {{- if and .IsHome .Site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
   {{- partial "home_info.html" . }}
   {{- end }}
+  <h2>sections</h2>
+  <div class="sections">
+{{- $term := .Data.Term }}
+{{- range $index, $page := .Sections }}
+
+<article class="post-entry section">
+  {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
+  {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+  <header class="entry-header">
+    <p>
+    {{- if  .Title }} {{- .Title }}
+    {{- else }} {{.File.TranslationBaseName}} {{- end }}
+    {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+    </p>
+  </header>
+  {{- if (ne (.Param "hideSummary") true) }}
+  {{- end }}
+  {{- if not (.Param "hideMeta") }}
+  {{- end }}
+  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+</article>
+{{- end }}
+  </div>
 
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
@@ -65,7 +89,7 @@ Default list partial
   </header>
   {{- if (ne (.Param "hideSummary") true) }}
   <section class="entry-content">
-    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    <p>{{ .Description  }}</p>
   </section>
   {{- end }}
   {{- if not (.Param "hideMeta") }}
@@ -92,4 +116,3 @@ Default list partial
 
 {{- end }}{{/* end profileMode */}}
 
-{{- end }}{{- /* end main */ -}}

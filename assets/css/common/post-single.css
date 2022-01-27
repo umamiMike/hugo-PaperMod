@@ -54,8 +54,8 @@ html {
 }
 
 .post-content h2 {
-  margin-top: 32px;
-  margin-bottom: 32px;
+  margin-top: var(--gap);
+  margin-bottom: var(--gap);
   font-size: 32px;
 }
 
@@ -78,6 +78,11 @@ html {
 .post-content h6 {
   font-size: 12px;
 }
+
+.post-content a {
+  color: var(--link);
+}
+
 .post-content p
 
 .post-content a,
@@ -121,18 +126,24 @@ html {
 .post-content dl {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
+  background-color: var(--dd-bg);
+  border-radius: 4px;
+  margin-top: var(--gap);
+  margin-bottom: var(--gap);
 }
 
 .post-content dt {
   width: 25%;
-  font-weight: 700;
+  font-weight: 500;
+  color: var(--primary);
+  border-right: 2px solid  var(--middle);
+  margin-left: 4px;
+ padding: var(--content-gap);
 }
 
 .post-content dd {
-  width: 75%;
-  margin-inline-start: 0;
-  padding-inline-start: 10px;
+ width: 60%;
+ padding: var(--content-gap);
 }
 
 .post-content dd ~ dd,
@@ -569,10 +580,4 @@ margin-right: 4em;
     page-break-inside: avoid;
   }
 
-  code,
-  pre,
-  div {
-    /* page-break-before: avoid; */
-    /* page-break-after: avoid; */
-  }
 }
