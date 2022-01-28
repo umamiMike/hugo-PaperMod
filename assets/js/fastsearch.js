@@ -8,6 +8,7 @@ var resultsAvailable = false;
 
 // load our search index
 window.onload = function () {
+  console.log("loading fast search");
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
@@ -21,7 +22,6 @@ window.onload = function () {
                         ignoreLocation: true,
                         keys: [
                             'title',
-                            'permalink',
                             'summary',
                             'content'
                         ]

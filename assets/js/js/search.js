@@ -1,4 +1,4 @@
-summaryInclude = 60;
+summaryInclude = 20;
 var fuseOptions = {
   shouldSort: true,
   includeMatches: true,
@@ -40,6 +40,8 @@ function executeSearch(searchQuery) {
 
 function populateResults(result) {
   $.each(result, function (key, value) {
+
+      console.log(key);
     var contents = value.item.contents;
     var snippet = '';
     var snippetHighlights = [];
