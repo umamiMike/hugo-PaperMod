@@ -34,7 +34,7 @@
   {{- if and .IsHome .Site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
   {{- partial "home_info.html" . }}
   {{- end }}
-  <h2>sections</h2>
+  <h2>Sub-Sections</h2>
   <div class="sections">
 {{- $term := .Data.Term }}
 {{- range $index, $page := .Sections }}
@@ -58,6 +58,8 @@
 {{- end }}
   </div>
 
+  <h2> Pages in this Section</h2>
+  <div class="posts">
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
 
@@ -101,6 +103,7 @@
 </article>
 {{- end }}
 
+  </div>
 {{- if gt $paginator.TotalPages 1 }}
 <footer class="page-footer">
   <nav class="pagination">

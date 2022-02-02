@@ -1,12 +1,8 @@
-<!-- <script src="assets/js/svg-pan-zoom.js"></script> -->
 <style>
 
-figure svg {
-  margin-left: 20px;
-    max-width: 100%;
-}
-
 </style>
+<div class="svg-container">
 <figure class="{{ .Get 1}}">
   {{ readFile (print "" (index .Params 0)) | safeHTML }}
 </figure>
+</div>

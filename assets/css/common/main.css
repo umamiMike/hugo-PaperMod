@@ -14,11 +14,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: calc(var(--gap) / 2);
+  margin-top: var(--gap);
   margin-bottom: var(--gap);
 
 }
+.posts {
+
+  margin-top: var(--gap);
+  margin-bottom: var(--gap);
+}
 .sections .post-entry {
-  margin-bottom: 0px;
   padding: calc(var(--gap) / 2);
   border-radius: calc(var(--radius) / 2);
 }
