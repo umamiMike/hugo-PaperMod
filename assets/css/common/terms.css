@@ -1,5 +1,16 @@
+.terms-tags {
+display: flex;
+/* flex-direction: column; */
+/* flex-wrap: wrap; */
+flex-flow: column wrap;
+
+list-style-type: none;
+height: 90vh;
+justify-content: flex-start;
+align-items:stretch;
+width: 90%;
+}
 .terms-tags li {
-    display: inline-block;
 }
 
 .terms-tags a {

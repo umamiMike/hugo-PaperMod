@@ -133,26 +133,17 @@ html {
 }
 
 .post-content dl {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: var(--dd-bg);
-  border-radius: 4px;
   margin-top: var(--gap);
   margin-bottom: var(--gap);
 }
 
 .post-content dt {
-  width: 25%;
   font-weight: 500;
   color: var(--primary);
-  border-right: 2px solid var(--middle);
-  margin-left: 4px;
-  padding: var(--content-gap);
 }
 
-.post-content dd {
-  width: 60%;
-  padding: var(--content-gap);
+dt::after {
+  content: ": ";
 }
 
 .post-content dd ~ dd,
@@ -298,51 +289,26 @@ html {
   font-weight: normal;
 }
 
+
 .toc {
-  margin: 0 2px 40px 2px;
-  border: 1px solid var(--border);
-  background: var(--code-bg);
-  border-radius: var(--radius);
-  padding: 0.4em;
-}
-
-.toc-container.wide {
-  position: absolute;
-  height: 100%;
-  border-right: 1px solid var(--border);
-  left: calc((var(--toc-width) + var(--gap)) * -1);
-  top: calc(var(--gap) * 2);
-  width: var(--toc-width);
-}
-
-.wide .toc {
   position: sticky;
-  top: var(--gap);
-  border: unset;
-  background: unset;
-  border-radius: unset;
-  width: 100%;
-  margin: 0 2px 40px 2px;
+  top: 0;
+
+    /* right: 0; */
+    /* border-right: 1px solid var(--border); */
+    /* top: calc(var(--gap) * 2); */
+   background-color: rgba(var(--code-bg-rgb), 0.7);
+   z-index: 10000;
+    margin-left: 80%;
+   font-size: .8rem;
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+   /* margin: 0 2px 40px 2px; */
+   /* position: absolute; */
 }
 
-.toc details summary {
-  cursor: zoom-in;
-  margin-inline-start: 20px;
-  padding: 12px 0;
-}
 
-.toc details[open] summary {
-  cursor: zoom-out;
-}
 
-.toc .details {
-  display: inline;
-  font-weight: 500;
-}
-
-.toc-container.wide .toc .inner {
-  margin: 0;
-}
 
 .active {
   font-weight: 600;
@@ -350,21 +316,22 @@ html {
 
 .toc ul {
   list-style-type: circle;
+  list-style-type: none;
 }
 
 .toc .inner {
   margin: 0 0 0 20px;
   padding: 0px 15px 15px 20px;
-  font-size: 16px;
 }
 
+
 .toc li ul {
-  margin-inline-start: calc(var(--gap) * 0.5);
+  margin-inline-start: calc(var(--gap) * 0.5); 
   list-style-type: none;
 }
 
 .toc summary:focus {
-  outline: 0;
+   /* outline: 0; */
 }
 
 .post-footer {
