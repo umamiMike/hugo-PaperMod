@@ -1,10 +1,13 @@
-  {{ range where .Pages.ByWeight ".IsSection" false }}
+
+  {{ range where .CurrentSection.Pages.ByWeight ".IsSection" false }}
+
+<details>
+  <summary>
+    {{ .Title }}
+  </summary>
+
 <article class="post-entry">
-  <h2>
-  {{ .Title }}
-  </h2> 
-  <br>
-  <br>
   {{ .Content }}
 </article>
+</details>
   {{ end }}

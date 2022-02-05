@@ -259,9 +259,9 @@ dt::after {
   border-bottom: 0;
 }
 
-.post-content iframe {
-  max-width: 100%;
-}
+/* .post-content iframe { */
+/*   max-width: 100%; */
+/* } */
 
 .post-content img {
   border-radius: 4px;
@@ -507,6 +507,11 @@ h6:hover .anchor {
     color: rgb(45, 45, 45);
   }
 
+  .post-content img {
+    width: 50%;
+    page-break-inside: avoid;
+  }
+
   /* scaling down headers */
 
   .post-content h1 {
@@ -561,7 +566,7 @@ h6:hover .anchor {
   }
 
   .post-content ul,
-  ol {
+  ol, img, div {
     page-break-inside: avoid;
   }
   .post-content a {
