@@ -1,4 +1,5 @@
 {{- define "main" }}
+<div class="content">
 <article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
@@ -11,27 +12,36 @@
       {{ .Description }}
     </div>
     {{- end }}
-    {{- if not (.Param "hideMeta") }}
-    <div class="post-meta">
-      {{- partial "post_meta.html" . -}}
-      {{- partial "translation_list.html" . -}}
-      {{- partial "edit_post.html" . -}}
-      {{- partial "post_canonical.html" . -}}
-    </div>
-    {{- end }}
+    {{- partial "post_meta-all.html" . }}
+
   </header>
   {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+
   {{- if .Content }}
+
   {{- if (.Param "ShowToc") }}
   {{- partial "toc.html" . }}
   {{- end }}
+
+
+  {{ end }}
   <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
+    {{- else }}{{ .Content }}
+    {{ end }}
+<div>
+  {{- if isset .Params "concat" }}
+<p>
+<details>
+  <summary>{{ .CurrentSection }}</summary>
+  {{- partial "concat.html" . -}}
+</details>
+</p>
+   {{- end }}
+</div>
   </div>
-  {{- end }}
 
   <footer class="post-footer">
     {{- if .Params.tags }}
@@ -53,5 +63,6 @@
   {{- partial "comments.html" . }}
   {{- end }}
 </article>
+</div>
 
 {{- end }}{{/* end main */}}
