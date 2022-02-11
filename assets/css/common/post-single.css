@@ -335,7 +335,7 @@ dt::after {
 }
 
 .post-footer {
-  margin-top: 164px;
+  margin-top: 64px;
 }
 
 .post-tags li {
@@ -379,7 +379,7 @@ dt::after {
 }
 
 .share-buttons {
-  margin-top: calc(var(--gap) * 2);
+  margin-top: calc(var(--gap));
   padding-inline-start: var(--radius);
   display: flex;
   justify-content: center;
@@ -387,7 +387,7 @@ dt::after {
 }
 
 .share-buttons a {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .share-buttons a:not(:last-of-type) {
@@ -395,8 +395,8 @@ dt::after {
 }
 
 .share-buttons a svg {
-  height: 30px;
-  width: 30px;
+  height: 24px;
+  width: 24px;
   fill: currentColor;
   transition: transform 0.1s;
 }
