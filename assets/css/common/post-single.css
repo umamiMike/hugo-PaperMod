@@ -291,20 +291,22 @@ dt::after {
 
 
 .toc {
-  position: sticky;
-  top: 0;
-
-    /* right: 0; */
-    /* border-right: 1px solid var(--border); */
-    /* top: calc(var(--gap) * 2); */
+  position: fixed;
+  display: inline-block;
+  top: 60px;
+  right: 0px;
+  /* margin-left: 80%; */
+  /* background-color: var(--code-bg); */
    background-color: rgba(var(--code-bg-rgb), 0.7);
-   z-index: 10000;
-    margin-left: 80%;
-   font-size: .8rem;
+  z-index: 10000;
+   font-size: 1rem;
    border: 1px solid var(--border);
    border-radius: var(--radius);
-   /* margin: 0 2px 40px 2px; */
-   /* position: absolute; */
+   max-height: 200px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   scrollbar-width: thin;
+
 }
 
 
@@ -501,6 +503,9 @@ h6:hover .anchor {
     display: initial;
     /* line-height: 1em; */
   }
+  #fastSearch,  .post-header {
+    visibility: hidden;
+  }
   .post-content {
     /* margin-left: 4em; */
     /* margin-right: 4em; */
@@ -508,7 +513,7 @@ h6:hover .anchor {
   }
 
   .post-content img {
-    width: 50%;
+    /* width: 50%; */
     page-break-inside: avoid;
   }
 

@@ -1,4 +1,7 @@
 {{- define "main" }}
+  {{- if (.Param "ShowToc") }}
+  {{- partial "toc.html" . }}
+  {{- end }}
 <div class="content">
 <article class="post-single">
   {{- partial "post_header.html" . }}
@@ -7,9 +10,6 @@
 
   {{- if .Content }}
 
-  {{- if (.Param "ShowToc") }}
-  {{- partial "toc.html" . }}
-  {{- end }}
   {{ end }}
   <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}

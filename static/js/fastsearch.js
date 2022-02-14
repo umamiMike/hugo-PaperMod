@@ -12,27 +12,15 @@ var resultsAvailable = false; // Did we get any search results?
 //
 document.addEventListener('keydown', function(event) {
 
-console.log(event.which)
+        loadSearch(); // loads our json data and builds fuse.js search index
+        firstRun = false; // let's never do this again
   // CMD-/ to show / hide Search
   if (event.which == 191) {
       // Load json search index if first time invoking search
       // Means we don't load json unless searches are going to happen; keep user payload small unless needed
       if(firstRun) {
-        loadSearch(); // loads our json data and builds fuse.js search index
-        firstRun = false; // let's never do this again
       }
 
-      // Toggle visibility of search box
-      if (!searchVisible) {
-        document.getElementById("fastSearch").style.visibility = "visible"; // show search box
-        document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
-        searchVisible = true; // search visible
-      }
-      else {
-        document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
-        document.activeElement.blur(); // remove focus from search box 
-        searchVisible = false; // search not visible
-      }
   }
 
   // Allow ESC (27) to close search box
@@ -98,7 +86,6 @@ function fetchJSONFile(path, callback) {
 // on first call of search box (CMD-/)
 //
 function loadSearch() { 
-  console.log("are we loadig search?")
   fetchJSONFile('/index.json', function(data){
 
     var options = { // fuse.js options; check fuse.js website for details
@@ -121,29 +108,18 @@ function loadSearch() {
 //
 function executeSearch(term) {
   let results = fuse.search(term); // the actual query being run using fuse.js
-  let searchitems = ''; // our results bucket
 
-  if (results.length === 0) { // no results based on what was typed into the input box
-    resultsAvailable = false;
-    searchitems = '';
-  } else { // build our html 
-    for (let item in results.slice(0,5)) { // only show first 5 results
+  const limitedResults = results.slice(0,10)
+  const searchitems = limitedResults.filter(ob => ob.item.title).map(ob => {
+      let item = ob.item;
+      return `<li><a href="${item.permalink}" tabindex="0">${item.title}</a></li>`
+    })
 
-      searchitems = searchitems + `
-      <li><a href="${results[item].permalink}" tabindex="0">
-      <span class="title"${results[item].title}</span>
-      <br /> 
-      <span class="sc">${results[item].section}</span> — ${results[item].date } — ${ results[item].desc }</em></a></li>`
-    }
-    resultsAvailable = true;
-  }
-
-  rezzults = results;
-  document.getElementById("searchResults").innerHTML = searchitems;
+const joinedsearchitems = searchitems.join('')
+  document.getElementById("searchResults").innerHTML = joinedsearchitems;
 
   if (results.length > 0) {
     first = list.firstChild.firstElementChild; // first result container — used for checking against keyboard up/down location
     last = list.lastChild.firstElementChild; // last result container — used for checking against keyboard up/down location
   }
 }
-

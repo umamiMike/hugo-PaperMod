@@ -6,14 +6,17 @@
 </head>
 
 <body class="
-{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
+{{- if (or (ne .Kind `page` ) (eq .Layout `archives`)) -}}
 {{- print "list" -}}
 {{- end -}}
 {{- if eq $.Site.Params.defaultTheme `dark` -}}
 {{- print " dark" }}
 {{- end -}}
 " id="top">
+
+ {{ partial "search.html" . }}
     {{- partialCached "header.html" . .Page -}}
+
     <main class="main {{- if (eq .Kind `page`) -}}{{- print " page" -}}{{- end -}}">
         {{- block "main" . }}{{ end }}
     </main>

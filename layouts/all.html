@@ -1,0 +1,14 @@
+{{- define "main" }}
+
+<div class="sections">
+  {{ range where .Pages ".IsSection" true }}
+<div class="post-entry section">
+  <a href="{{ .Permalink }}">
+{{ .Title }}
+  </a>
+</div>
+  {{ end  }}
+</div>
+ {{ partial "concat" . }}
+{{- end }}
+{{/* end main */}}
