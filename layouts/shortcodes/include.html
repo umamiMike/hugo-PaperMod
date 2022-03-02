@@ -1,0 +1,4 @@
+{{ $file := (.Get "file") }}
+{{ with .Site.GetPage  $file }}
+{{ .Summary }}
+{{ end }}
