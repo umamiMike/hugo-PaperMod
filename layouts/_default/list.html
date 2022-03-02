@@ -5,9 +5,7 @@
 
 <div class="content">
   {{ partial "page_header.html" . }}
-
   {{- partial "section_content.html" . }}
-
 
 {{- end }}
 {{- $pages := .RegularPages }}
@@ -16,7 +14,9 @@
   {{- if and .IsHome .Site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
   {{- partial "home_info.html" . }}
   {{- end }}
+  {{ if .Sections }}
   <h2>Sub-Sections</h2>
+  {{- end }}
   <div class="sections">
 {{- $term := .Data.Term }}
 {{- range $index, $page := .Sections }}
@@ -25,11 +25,9 @@
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
-    <p>
     {{- if  .Title }} {{- .Title }}
     {{- else }} {{.File.TranslationBaseName}} {{- end }}
-    {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
-    </p>
+    {{- if .Draft }} ◒{{- end }}
   </header>
   {{- if (ne (.Param "hideSummary") true) }}
   {{- end }}
@@ -39,7 +37,7 @@
 </article>
 {{- end }}
   </div>
-  <h2> Section content</h2>
+  <h2> Section Pages</h2>
   <div class="posts">
 {{- $term := .Data.Term }}
 
@@ -59,7 +57,6 @@
 {{- $class = printf "%s %s" $class "section" }}
 {{- end }}
 
-
 <article class="{{ $class }}">
 
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
@@ -68,7 +65,7 @@
     <h2>
       {{- if  .Title }} {{- .Title }}
       {{- else }} {{.File.TranslationBaseName}} {{- end }}
-      {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+    {{- if .Draft }}   ◒{{- end }}
     </h2>
   </header>
   {{- if (ne (.Param "hideSummary") true) }}
@@ -84,7 +81,6 @@
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
 {{- end }}
-
   </div>
 
 {{- if gt $paginator.TotalPages 1 }}

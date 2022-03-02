@@ -10,15 +10,23 @@
 </header>
 {{- end }}
 
+<!-- <pre> -->
+<!-- {{ range  .Data.Terms }} -->
+<!-- {{ . }} -->
+<!--     {{- end }} -->
+<!-- </pre> -->
 <ul class="terms-tags">
     {{- $type := .Type }}
-    {{- range $key, $value := .Data.Terms.Alphabetical }}
+    {{- range $key, $value := .Data.Terms.ByCount }}
+    {{- if (ge .Count 2 ) }}
     {{- $name := .Name }}
     {{- $count := .Count }}
+
     {{- with $.Site.GetPage (printf "/%s/%s" $type $name) }}
     <li>
         <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
     </li>
+    {{- end }}
     {{- end }}
     {{- end }}
 </ul>
