@@ -1,5 +1,5 @@
-baseURL: "https://adityatelange.github.io/hugo-PaperMod/"
-title: PaperMod
+baseURL: "https://umamimike.github.io/hugo-PaperMod/"
+title: PaperMod-Fork
 paginate: 5
 theme: hugo-PaperMod
 
@@ -125,26 +125,24 @@ params:
               url: tags
 
     homeInfoParams:
-        Title: "PaperMod"
+        Title: "PaperMod-Fork"
         Content: >
-            Welcome to demo of hugo's theme PaperMod.
+            Welcome to demo of hugo's theme PaperMod-Fork.
 
             - **PaperMod** is a simple but fast and responsive theme with useful feature-set that enhances UX.
 
             - Do give a 🌟 on Github !
-
+            - Fork is based on [adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
             - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper).
 
     socialIcons:
         - name: github
-          url: "https://github.com/adityatelange/hugo-PaperMod"
-        - name: KoFi
-          url: "https://ko-fi.com/adityatelange"
+          url: "https://github.com/umamiMike/hugo-PaperMod"
         - name: RsS
           url: "index.xml"
 
     editPost:
-        URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+        URL: "https://github.com/umamimike/hugo-PaperMod/tree/exampleSite/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
@@ -218,3 +216,11 @@ services:
         disableInlineCSS: true
     twitter:
         disableInlineCSS: true
+fuseOpts:
+  isCaseSensitive: false
+  shouldSort: true
+  location: 0
+  distance: 1000
+  threshold: 0.4
+  minMatchCharLength: 0
+  keys: ["title", "permalink", "summary", "content"]
