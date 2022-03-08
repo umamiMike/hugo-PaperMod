@@ -1,6 +1,6 @@
 This is a Fork of [adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
 
-It has mostly been for my own experimentation, so many things are in a WIP state. I welcome feedback.
+It has mostly been for my own experimentation, so many things are in a WIP state. I welcome feedback. You can demo it [here](https://umamimike.github.io/hugo-PaperMod/).
 
 ## New features
 
@@ -25,6 +25,8 @@ Your best bet is to go to[ Shortcode Examples | PaperMod-Fork](https://umamimike
   - creates an overview of the current section with ALL content in a single document.
   - [ ] update styling with regard to flexbox problems
   - [ ] document
+
+## Original Readme
 
 <h1 align=center>Hugo PaperMod | <a href="https://adityatelange.github.io/hugo-PaperMod/" rel="nofollow">Demo</a></h1>
 
