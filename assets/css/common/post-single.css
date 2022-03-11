@@ -289,6 +289,11 @@ dt::after {
   font-weight: normal;
 }
 
+.post-content details {
+  font-size: 2rem;
+  border: 1px solid white;
+}
+
 .toc {
   position: fixed;
   display: inline-block;

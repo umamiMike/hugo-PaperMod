@@ -1,0 +1,7 @@
+{{ $file := (.Get "file") }}
+{{- $path :=  .Page.File.Dir -}}
+{{- $fullname := (printf "/%s/%s" $path $file) -}}
+{{  if fileExists $fullname }}
+   {{ readFile $fullname | markdownify  }}
+   {{ end }}
+   
