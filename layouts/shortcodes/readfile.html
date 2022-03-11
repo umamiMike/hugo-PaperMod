@@ -1,2 +1,25 @@
 {{ $file := (.Get "file") }}
-   {{ readFile $file | markdownify  }}
+  <pre>
+the file is {{ $file }}
+
+and logical name is 
+{{ .Page.File.LogicalName }}
+
+assembling  what is needed for readfile
+the . is
+{{ .Site.BaseURL  }}{{ .Page.File.Dir }}{{ $file }}
+Now I just need to turn it into the right thing
+
+now calculating
+
+{{- $path :=  .Page.File.Dir -}}
+
+{{- $fullname := (printf "/%s/%s" $path $file) -}}
+
+fullname is
+
+{{ $fullname }}
+  </pre>
+   {{ readFile $fullname | markdownify  }}
+
+   
