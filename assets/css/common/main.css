@@ -84,6 +84,29 @@ div.highlight,
 pre {
     position: relative;
 }
+.list-tags {
+  display: flex;
+}
+
+
+.list-tags li {
+  display: inline-block;
+  margin-inline-end: 3px;
+
+}
+
+.list-tags a {
+  border-radius: calc(var(--gap) / 3);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  display: block;
+  padding-inline-start: 8px;
+  padding-inline-end: 8px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: bold;
+  background: var(--tertiary);
+}
 
 .copy-code {
     display: none;
