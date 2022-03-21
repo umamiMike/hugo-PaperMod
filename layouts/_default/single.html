@@ -1,36 +1,22 @@
-{{- define "main" }}
-  {{- if (.Param "ShowToc") }}
-  {{- partial "toc.html" . }}
-  {{- end }}
+{{- define "main" }} {{- if (.Param "ShowToc") }} {{- partial "toc.html" . }}
+{{- end }}
 <div class="content">
-<article class="post-single">
-  {{- partial "post_header.html" . }}
-  {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden }}
-  {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
-
-  {{- if .Content }}
-
-  {{ end }}
-  <div class="post-content">
-    {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}
-    {{ end }}
-    <div>
-      {{- if isset .Params "overview" }}
-      <p>
-      <details>
-        <summary>{{ .CurrentSection }}</summary>
-        {{- partial "overview.html" . -}}
-      </details>
-      </p>
-      {{- end }}
+  <article class="post-single">
+    {{- partial "post_header.html" . }} {{- $isHidden := .Params.cover.hidden |
+    default .Site.Params.cover.hiddenInSingle | default
+    .Site.Params.cover.hidden }} {{- partial "cover.html" (dict "cxt" . "IsHome"
+    false "isHidden" $isHidden) }} {{- if .Content }} {{ end }}
+    <div class="post-content">
+      {{- if not (.Param "disableAnchoredHeadings") }} {{- partial
+      "anchored_headings.html" .Content -}} {{- else }}{{ .Content }} {{ end }}
+      <div>
+        {{- if isset .Params "overview" }}
+        <p>{{- partial "overview.html" . -}}</p>
+        {{- end }}
+      </div>
     </div>
-  </div>
-  {{- partial "post_footer.html" . }}
-  {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
-  {{- end }}
-</article>
+    {{- partial "post_footer.html" . }} {{- if (.Param "comments") }} {{-
+    partial "comments.html" . }} {{- end }}
+  </article>
 </div>
 {{- end }}{{/* end main */}}
