@@ -1,0 +1,16 @@
+
+  {{ $sexion :=  where .CurrentSection.Pages.ByWeight ".IsSection" false }}
+  {{ $notoverview :=  where .CurrentSection.Pages.ByWeight "Params.overview" "==" nil }}
+
+  {{ $filtered := $sexion | intersect $notoverview }}
+  {{ range after 1 ( where .CurrentSection.Pages.ByWeight ".IsSection" false ) }}
+<details>
+  <summary class="bold">
+    {{ .Title }}
+  </summary>
+
+<article class="">
+  {{ .Content }}
+</article>
+</details>
+  {{ end }}

@@ -1,18 +1,15 @@
-#fastSearch { 
+#fastSearch {
   /* visibility: hidden; */
   /* position: absolute; */
   /* right: 400px; */
   /* top: 0px; */
   display: inline-block;
-  width: 300px;
 }
 #fastSearch svg {
   display: inline-block;
 }
 
-#fastSearch input { 
-  padding: 4px 10px;
-  width: 80%;
+#fastSearch input {
   /* height: 31px; */
   /* font-size: 1.6em; */
   color: var(--primary);
@@ -23,18 +20,37 @@
   outline: none;
   text-align: left;
   /* display: block; */
+  height: 24px;
 }
 
-#searchResults { visibility: inherit; display: inline-block; width: 320px; }
+#searchResults {
+  position: absolute;
+  visibility: inherit;
+  display: inline-block;
+  left: 10%;
+    top: 100%;
+    width: 80%;
+  z-index: 1000;
+}
 
-#searchResults li { 
-  list-style: none; 
+#searchResults li {
+  list-style: none;
   margin-left: 0em;
   background-color: var(--tertiary);
   border-bottom: 1px dotted var(--secondary);
 }
-#searchResults li .title { font-size: 1.1em; margin-bottom: 10px; display: inline-block;}
+#searchResults li .title {
+  /* margin-bottom: 10px; */
+  display: inline-block;
+}
 
-#searchResults a { text-decoration: none !important; padding: 2px; display: inline-block; }
-#searchResults li:hover, li:focus { outline: 0; background-color: var(--middle);}
-
+#searchResults a {
+  text-decoration: none !important;
+  padding: 2px;
+  display: inline-block;
+}
+#searchResults li:hover,
+li:focus {
+  outline: 0;
+  background-color: var(--middle);
+}

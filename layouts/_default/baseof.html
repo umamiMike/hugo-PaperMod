@@ -14,7 +14,6 @@
 {{- end -}}
 " id="top">
 
- {{ partial "search.html" . }}
     {{- partialCached "header.html" . .Page -}}
 
     <main class="main {{- if (eq .Kind `page`) -}}{{- print " page" -}}{{- end -}}">

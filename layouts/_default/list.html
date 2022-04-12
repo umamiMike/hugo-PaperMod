@@ -25,15 +25,16 @@
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
+  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
     {{- if  .Title }} {{- .Title }}
     {{- else }} {{.File.TranslationBaseName}} {{- end }}
     {{- if .Draft }} ◒{{- end }}
+  </a>
   </header>
   {{- if (ne (.Param "hideSummary") true) }}
   {{- end }}
   {{- if not (.Param "hideMeta") }}
   {{- end }}
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
 {{- end }}
   </div>
@@ -62,15 +63,29 @@
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
+
+  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
     <h2>
       {{- if  .Title }} {{- .Title }}
       {{- else }} {{.File.TranslationBaseName}} {{- end }}
     {{- if .Draft }}   ◒{{- end }}
     </h2>
+  </a>
   </header>
   {{- if (ne (.Param "hideSummary") true) }}
+  <div>
+ <p>{{ .Description  }}</p>
+
+  </div>
   <section class="entry-content">
-    <p>{{ .Description  }}</p>
+
+    {{- if .Params.tags }}
+    <ul class="list-tags">
+      {{- range .Params.tags }}
+      <li><a href="{{ $.Site.BaseURL }}/tags/{{ . }}">{{ . }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
   </section>
   {{- end }}
   {{- if not (.Param "hideMeta") }}
@@ -78,7 +93,6 @@
     {{- partial "post_meta.html" . -}}
   </footer>
   {{- end }}
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
 {{- end }}
   </div>

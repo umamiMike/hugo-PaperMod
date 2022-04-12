@@ -2,6 +2,7 @@
 <header class="header">
     <nav class="nav">
       {{- partial "logo.html" . -}}
+ {{ partial "search.html" . }}
         {{- $currentPage := . }}
         <ul id="menu">
             {{- range .Site.Menus.main }}
