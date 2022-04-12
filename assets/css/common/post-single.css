@@ -290,16 +290,15 @@ dt::after {
 }
 
 .post-content details {
-
 }
 .post-content details summary {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   background-color: rgba(var(--code-bg-rgb), 0.7);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: calc(var(--gap) * 0.5);
-
+  margin: calc(var(--gap) * 0.5);
 }
 
 .toc {
