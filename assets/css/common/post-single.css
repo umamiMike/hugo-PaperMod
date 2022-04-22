@@ -292,13 +292,21 @@ dt::after {
 .post-content details {
 }
 .post-content details summary {
+<<<<<<< HEAD
   font-size: 1.4rem;
+=======
+  font-size: 1.3rem;
+>>>>>>> 25fd25e32d4a392a5d7e4acfdcb6498c962fc439
   font-weight: bold;
   background-color: rgba(var(--code-bg-rgb), 0.7);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: calc(var(--gap) * 0.5);
+<<<<<<< HEAD
   margin: calc(var(--gap) * 0.5);
+=======
+  margin-bottom: 2px;
+>>>>>>> 25fd25e32d4a392a5d7e4acfdcb6498c962fc439
 }
 
 .toc {
@@ -598,5 +606,8 @@ h6:hover .anchor {
   }
   .post-content a {
     color: rgb(45, 45, 45);
+  }
+  .post-content details summary {
+    border: none;
   }
 }

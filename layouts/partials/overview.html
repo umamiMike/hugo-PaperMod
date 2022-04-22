@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   {{ $sexion :=  where .CurrentSection.Pages.ByWeight ".IsSection" false }}
   {{ $notoverview :=  where .CurrentSection.Pages.ByWeight "Params.overview" "==" nil }}
@@ -14,3 +15,15 @@
 </article>
 </details>
   {{ end }}
+=======
+{{ $sexion := where .CurrentSection.Pages.ByWeight ".IsSection" false }} {{
+$notoverview := where .CurrentSection.Pages.ByWeight "Params.overview" "==" nil
+}} {{ $filtered := $sexion | intersect $notoverview }} {{ range ( where
+.CurrentSection.Pages.ByWeight ".IsSection" false ) }}
+<details open>
+  <summary class="bold">{{ .Title }}</summary>
+
+  <article class="">{{ .Content }}</article>
+</details>
+{{ end }}
+>>>>>>> 25fd25e32d4a392a5d7e4acfdcb6498c962fc439
