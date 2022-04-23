@@ -1,18 +1,17 @@
-html {
-  height: 100%;
-}
+/* html { */
+/*   height: 100%; */
+/* } */
 
 .post-single {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: space-between;
 }
-.page-header,
 .post-header {
+  flex: 1;
   margin-bottom: calc(var(--gap) * 2);
 }
-
 .post-title {
   margin-bottom: 2px;
   font-size: 40px;
@@ -47,6 +46,7 @@ html {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  flex-grow: 4;
 }
 
 .post-content h1 {
@@ -338,12 +338,9 @@ dt::after {
   list-style-type: none;
 }
 
-.toc summary:focus {
-  /* outline: 0; */
-}
-
 .post-footer {
   margin-top: 64px;
+  flex: 1;
 }
 
 .post-tags li {
