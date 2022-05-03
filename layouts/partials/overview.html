@@ -1,4 +1,3 @@
-
   {{ $sexion :=  where .CurrentSection.Pages.ByWeight ".IsSection" false }}
   {{ $notoverview :=  where .CurrentSection.Pages.ByWeight "Params.overview" "==" nil }}
 
@@ -12,5 +11,8 @@
 <article class="">
   {{ .Summary | markdownify }}
 </article>
+<details open>
+  <summary class="bold">{{ .Title }}</summary>
+  <article class="">{{ .Content }}</article>
 </details>
-  {{ end }}
+{{ end }}
