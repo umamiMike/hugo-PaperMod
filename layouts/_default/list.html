@@ -82,7 +82,10 @@
     {{- if .Params.tags }}
     <ul class="list-tags">
       {{- range .Params.tags }}
-      <li><a href="{{ $.Site.BaseURL }}/tags/{{ . }}">{{ . }}</a></li>
+      <li>
+  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+                
+      </li>
       {{- end }}
     </ul>
     {{- end }}

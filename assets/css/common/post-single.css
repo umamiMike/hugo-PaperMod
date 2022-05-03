@@ -1,18 +1,13 @@
-html {
-  height: 100%;
-}
-
 .post-single {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: space-between;
 }
-.page-header,
 .post-header {
+  flex: 1;
   margin-bottom: calc(var(--gap) * 2);
 }
-
 .post-title {
   margin-bottom: 2px;
   font-size: 40px;
@@ -47,6 +42,7 @@ html {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  flex-grow: 4;
 }
 
 .post-content h1 {
@@ -163,6 +159,7 @@ dt::after {
   padding: 12px 8px;
   line-height: 1.5;
   border-bottom: 1px solid var(--border);
+  text-align: left;
 }
 
 .post-content table th {
@@ -289,8 +286,6 @@ dt::after {
   font-weight: normal;
 }
 
-.post-content details {
-}
 .post-content details summary {
   font-size: 1.3rem;
   font-weight: bold;
@@ -298,7 +293,6 @@ dt::after {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: calc(var(--gap) * 0.5);
-  margin: calc(var(--gap) * 0.5);
   margin-bottom: 2px;
 }
 
@@ -339,12 +333,9 @@ dt::after {
   list-style-type: none;
 }
 
-.toc summary:focus {
-  /* outline: 0; */
-}
-
 .post-footer {
   margin-top: 64px;
+  flex: 1;
 }
 
 .post-tags li {

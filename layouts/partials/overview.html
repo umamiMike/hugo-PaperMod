@@ -11,15 +11,8 @@
 <article class="">
   {{ .Summary | markdownify }}
 </article>
-</details>
-  {{ end }}
-{{ $sexion := where .CurrentSection.Pages.ByWeight ".IsSection" false }} {{
-$notoverview := where .CurrentSection.Pages.ByWeight "Params.overview" "==" nil
-}} {{ $filtered := $sexion | intersect $notoverview }} {{ range ( where
-.CurrentSection.Pages.ByWeight ".IsSection" false ) }}
 <details open>
   <summary class="bold">{{ .Title }}</summary>
-
   <article class="">{{ .Content }}</article>
 </details>
 {{ end }}

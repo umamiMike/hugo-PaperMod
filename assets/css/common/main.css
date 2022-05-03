@@ -1,24 +1,24 @@
 .main {
-    position: relative;
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    max-width: var(--main-width);
-    max-width: calc(var(--nav-width) + var(--gap) * 2);
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    padding: var(--gap);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 100%;
+  /* position: relative; */
+  /* min-height: calc(100vh - var(--header-height) - var(--footer-height)); */
+  /* max-width: var(--main-width); */
+  /* max-width: calc(var(--nav-width) + var(--gap) * 2); */
+  /* margin-inline-start: auto; */
+  /* margin-inline-end: auto; */
+  /* padding: var(--gap); */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: stretch; */
+  /* flex-wrap: nowrap; */
+  /* width: 100%; */
 }
 
 .content {
-
-  /* border: 1px solid var(--secondary); */
-/* max-height: 600px; */
-/* overflow: scroll; */
-scrollbar-width: thin;
-overflow-x: hidden;
+  scrollbar-width: thin;
+  overflow-x: hidden;
+  display: flex;
+  align-items: stretch;
+  flex-flow: column nowrap;
 }
 .sections {
   display: flex;
@@ -26,10 +26,8 @@ overflow-x: hidden;
   gap: calc(var(--gap) / 2);
   margin-top: var(--gap);
   margin-bottom: var(--gap);
-
 }
 .posts {
-
   margin-top: var(--gap);
   margin-bottom: var(--gap);
 }
@@ -39,50 +37,71 @@ overflow-x: hidden;
 }
 
 .main.page {
-    max-width: var(--main-width);
+  max-width: var(--main-width);
 }
 
 .page-header h1 {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .pagination {
-    display: flex;
+  display: flex;
 }
 
 .pagination a {
-    color: var(--theme);
-    font-size: 13px;
-    line-height: 36px;
-    background: var(--primary);
-    border-radius: calc(36px / 2);
-    padding: 0 16px;
+  color: var(--theme);
+  font-size: 13px;
+  line-height: 36px;
+  background: var(--primary);
+  border-radius: calc(36px / 2);
+  padding: 0 16px;
 }
 
 .pagination .next {
-    margin-inline-start: auto;
+  margin-inline-start: auto;
 }
 
 .social-icons {
-    padding: 12px 0;
+  padding: 12px 0;
 }
 
 .social-icons a:not(:last-of-type) {
-    margin-inline-end: 12px;
+  margin-inline-end: 12px;
 }
 
 .social-icons a svg {
-    height: 26px;
-    width: 26px;
+  height: 26px;
+  width: 26px;
 }
 
 code {
-    direction: ltr;
+  direction: ltr;
 }
 
 div.highlight,
 pre {
-    position: relative;
+  position: relative;
+}
+.list-tags {
+  display: flex;
+}
+
+.list-tags li {
+  display: inline-block;
+  margin-inline-end: 3px;
+}
+
+.list-tags a {
+  border-radius: calc(var(--gap) / 3);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  display: block;
+  padding-inline-start: 8px;
+  padding-inline-end: 8px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: bold;
+  background: var(--tertiary);
 }
 .list-tags {
   display: flex;
@@ -109,19 +128,19 @@ pre {
 }
 
 .copy-code {
-    display: none;
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(78, 78, 78, 0.8);
-    border-radius: var(--radius);
-    padding: 0 5px;
-    font-size: 14px;
-    user-select: none;
+  display: none;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(78, 78, 78, 0.8);
+  border-radius: var(--radius);
+  padding: 0 5px;
+  font-size: 14px;
+  user-select: none;
 }
 
 div.highlight:hover .copy-code,
 pre:hover .copy-code {
-    display: block;
+  display: block;
 }
