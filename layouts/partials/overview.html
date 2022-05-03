@@ -3,15 +3,8 @@
 
   {{ $filtered := $sexion | intersect $notoverview }}
   {{ range after 1 ( where .CurrentSection.Pages.ByWeight ".IsSection" false ) }}
-<details>
-  <summary class="bold">
-    {{ .Title }}
-  </summary>
 
-<article class="">
-  {{ .Summary | markdownify }}
-</article>
-<details open>
+<details >
   <summary class="bold">{{ .Title }}</summary>
   <article class="">{{ .Content }}</article>
 </details>

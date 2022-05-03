@@ -11,13 +11,7 @@
       "anchored_headings.html" .Content -}} {{- else }}{{ .Content }} {{ end }}
       <div>
         {{- if isset .Params "overview" }}
-        <p>
-          <details>
-            <summary>{{ .CurrentSection }}</summary>
             {{- partial "overview.html" . -}}
-          </details>
-        </p>
-        <p>{{- partial "overview.html" . -}}</p>
         {{- end }}
       </div>
     </div>
