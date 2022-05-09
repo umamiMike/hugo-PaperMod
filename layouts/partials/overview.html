@@ -1,11 +1,21 @@
   {{ $sexion :=  where .CurrentSection.Pages.ByWeight ".IsSection" false }}
-  {{ $notoverview :=  where .CurrentSection.Pages.ByWeight "Params.overview" "==" nil }}
+  {{ $notoverview :=  where .CurrentSection.Pages "Params.overview" "==" nil }}
 
   {{ $filtered := $sexion | intersect $notoverview }}
-  {{ range after 1 ( where .CurrentSection.Pages.ByWeight ".IsSection" false ) }}
+  {{ range after 1 ( where .CurrentSection.Pages.ByTitle ".IsSection" false ) }}
 
 <details >
   <summary class="bold">{{ .Title }}</summary>
   <article class="">{{ .Content }}</article>
+    <!-- {{- if .Params.tags }} -->
+    <!-- <ul class="list-tags"> -->
+    <!--   {{- range .Params.tags }} -->
+    <!--   <li> -->
+  <!-- <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a> -->
+                
+    <!--   </li> -->
+    <!--   {{- end }} -->
+    <!-- </ul> -->
+    <!-- {{- end }} -->
 </details>
 {{ end }}
