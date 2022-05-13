@@ -31,8 +31,10 @@
     {{- if .Draft }} ◒{{- end }}
   </a>
   </header>
+  <div class="summary">
   {{- if (ne (.Param "hideSummary") true) }}
   {{- end }}
+  </div>
   {{- if not (.Param "hideMeta") }}
   {{- end }}
 </article>
@@ -73,7 +75,7 @@
   </a>
   </header>
   {{- if (ne (.Param "hideSummary") true) }}
-  <div>
+  <div class="description">
  <p>{{ .Description  }}</p>
 
   </div>

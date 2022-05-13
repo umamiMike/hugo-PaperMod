@@ -11,6 +11,7 @@
   /* align-items: stretch; */
   /* flex-wrap: nowrap; */
   /* width: 100%; */
+  white-space: nowrap;
 }
 
 .content {
@@ -84,6 +85,7 @@ pre {
 }
 .list-tags {
   display: flex;
+  flex-direction: column;
 }
 
 .list-tags li {
@@ -141,6 +143,31 @@ pre {
 div.highlight:hover .copy-code,
 pre:hover .copy-code {
   display: block;
+}
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .main {
+    white-space: normal;
+  }
+  .post-entry .description {
+    display: initial;
+  }
+
+  .list-tags {
+    flex-direction: row;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }
 
 @media print {
