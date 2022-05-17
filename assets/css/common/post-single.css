@@ -259,10 +259,11 @@ dt::after {
 /* .post-content iframe { */
 /*   max-width: 100%; */
 /* } */
-
 .post-content img {
-  border-radius: 4px;
-  margin: 1rem 0;
+  border-radius: 2px;
+  margin: 2rem 0;
+  border: solid var(--tertiary) 1px;
+  padding: 1em;
 }
 
 .post-content img[src*="#center"] {
@@ -308,7 +309,7 @@ dt::after {
   font-size: 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  max-height: 200px;
+  max-height: 400px;
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: thin;
