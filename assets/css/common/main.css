@@ -128,7 +128,6 @@ pre:hover .copy-code {
 @media (min-width: 768px) {
   .list-tags {
     flex-direction: row;
-    display: flex;
   }
 }
 

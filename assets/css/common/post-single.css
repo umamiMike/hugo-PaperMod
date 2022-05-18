@@ -106,13 +106,17 @@
   background: linear-gradient(to right, var(--primary) 100%, transparent 0) 0
     50%/1px 1px repeat-x;
 }
+.post-content figure {
+  margin: 2rem 0;
+  border: 1px solid var(--entry);
+  padding: 1rem;
+}
 
 .post-content dl,
 .post-content ol,
 .post-content p,
-.post-content figure,
 .post-content ul {
-  /* margin-bottom: calc(var(--content-gap) * 2); */
+  margin-bottom: calc(var(--content-gap) * 2);
 }
 
 .post-content ol,
@@ -261,7 +265,6 @@ dt::after {
 /* } */
 .post-content img {
   border-radius: 2px;
-  margin: 2rem 0;
   border: solid var(--tertiary) 1px;
   padding: 1em;
 }
@@ -276,7 +279,7 @@ dt::after {
 
 .post-content figure > figcaption {
   color: var(--primary);
-  font-size: 16px;
+  /* font-size: 16px; */
   font-weight: bold;
   margin: 8px 0 16px;
 }
@@ -286,11 +289,17 @@ dt::after {
   font-size: 14px;
   font-weight: normal;
 }
+.post-content details {
+  margin-left: 1em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  background-color: var(--entry);
+}
 
 .post-content details summary {
   font-size: 1.3rem;
   font-weight: bold;
-  background-color: rgba(var(--code-bg-rgb), 0.7);
+  background-color: var(--tertiary);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: calc(var(--gap) * 0.5);
