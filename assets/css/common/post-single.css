@@ -602,7 +602,7 @@ h6:hover .anchor {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 3px;
+    /* grid-column-gap: 3px; */
     grid-row-gap: 3px;
   }
   .overview > * {

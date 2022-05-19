@@ -8,7 +8,7 @@
     false "isHidden" $isHidden) }} {{- if .Content }} {{ end }}
     <div class="post-content">
       {{- if not (.Param "disableAnchoredHeadings") }} {{- partial
-      "anchored_headings.html" .Summary | markdownify -}} {{- else }}{{ .Content }} {{ end }}
+      "anchored_headings.html" .Summary -}} {{- else }}{{ .Content }} {{ end }}
       <div class="overview">
         {{- if isset .Params "overview" }}
             {{- partial "overview.html" . -}}
