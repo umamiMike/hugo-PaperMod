@@ -1,4 +1,9 @@
 .main {
+  max-width: 800px;
+}
+
+#l_sidebar {
+  /* background-color: black; */
 }
 
 .content {
@@ -56,7 +61,6 @@
 .social-icons a:not(:last-of-type) {
   margin-inline-end: 12px;
 }
-
 .social-icons a svg {
   height: 26px;
   width: 26px;
@@ -109,6 +113,10 @@ pre {
 div.highlight:hover .copy-code,
 pre:hover .copy-code {
   display: block;
+}
+
+.mermaid {
+  background-color: rgb(224, 225, 224);
 }
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

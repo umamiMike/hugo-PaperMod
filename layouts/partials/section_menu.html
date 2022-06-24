@@ -1,0 +1,13 @@
+  <div class="sections">
+{{- $term := .Data.Term }}
+{{- range $index, $page := .Sections }}
+
+<div class="section">
+  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
+    {{- if  .Title }} {{- .Title }}
+    {{- else }} {{.File.TranslationBaseName}} {{- end }}
+    {{- if .Draft }} ◒{{- end }}
+  </a>
+</div>
+{{- end }}
+  </div>

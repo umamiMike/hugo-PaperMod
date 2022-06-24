@@ -105,5 +105,6 @@
 }
 
 .section {
-  background-color: var(--tertiary);
+  background-color: var(--section);
+  padding: 4px;
 }
