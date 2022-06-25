@@ -43,12 +43,14 @@
   padding: var(--gap);
   background: var(--entry);
   border-radius: var(--radius);
-  transition: transform 0.1s;
+  transition: transform 0.4s;
   border: 1px solid var(--border);
 }
 
-.post-entry:active {
-  transform: scale(0.96);
+.post-entry:hover {
+  background: var(--entry-active);
+  transform: scale(0.98);
+  transition: transform 0.2s;
 }
 
 .tag-entry .entry-cover {
@@ -105,6 +107,20 @@
 }
 
 .section {
+  font-size: 80%;
+  font-weight: bold;
   background-color: var(--section);
   padding: 4px;
+  transition: font-size 0.2s;
+}
+
+.section:active {
+  background: var(--section-active);
+  transform: scale(0.96);
+}
+
+.section:hover {
+  background: var(--section-active);
+  font-size: 100%;
+  transition: font-size 0.2s;
 }

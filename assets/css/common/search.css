@@ -15,12 +15,13 @@
   color: var(--primary);
   /* font-weight: bold; */
   background-color: var(--tertiary);
-  border: 1px solid var(--hljs-bg);
+  border: 1px solid var(--middle);
   /* border-radius: 3px 3px 0px 0px; */
   outline: none;
   text-align: left;
   /* display: block; */
   height: 24px;
+  width: 80%;
 }
 
 #searchResults {
@@ -28,8 +29,8 @@
   visibility: inherit;
   display: inline-block;
   left: 10%;
-    top: 100%;
-    width: 80%;
+  top: 100%;
+  width: 80%;
   z-index: 1000;
 }
 

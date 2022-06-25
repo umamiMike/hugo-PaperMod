@@ -19,9 +19,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: calc(var(--gap) / 2);
-  margin-top: var(--gap);
-  margin-bottom: var(--gap);
+  margin-top: calc(var(--gap) / 2);
+  margin-bottom: calc(var(--gap) / 2);
 }
+
 .posts {
   margin-top: var(--gap);
   margin-bottom: var(--gap);
@@ -35,8 +36,9 @@
   max-width: var(--main-width);
 }
 
-.page-header h1 {
-  font-size: 40px;
+.page-header {
+  padding-bottom: 4px;
+  border-bottom: solid 1px var(--tertiary);
 }
 
 .pagination {

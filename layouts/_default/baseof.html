@@ -15,11 +15,9 @@
 " id="top">
 
     {{- partialCached "header.html" . .Page -}}
-    <div id="l_sidebar">fooo bar</div>
     <main class="main {{- if (eq .Kind `page`) -}}{{- print " page" -}}{{- end -}}">
         {{- block "main" . }}{{ end }}
     </main>
-    <div id="l_sidebar"></div>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
 
