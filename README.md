@@ -1,8 +1,8 @@
 This is a Fork of [adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
 
-It has mostly been for my own experimentation, so many things are in a WIP state. I welcome feedback. You can demo it [here](https://umamimike.github.io/hugo-PaperMod/).
-
-As I was working on this, I diverged enough with some work that I felt uncomfortable trying to PR upstream until I had codified the changes. 
+It has mostly been for my own experimentation, so many things are in a WIP
+state. I welcome feedback. You can demo it
+[here](https://umamimike.github.io/hugo-PaperMod/).
 
 ## New features
 
@@ -19,7 +19,7 @@ Your best bet is to go to[ Shortcode Examples | PaperMod-Fork](https://umamimike
 ## Undocumented Features
 
 - minor color alterations
-- media print produces a cleaner document 
+- media print produces a cleaner document
 - foldable TOC
 - sub sections
 - - changed search, currently BROKEN on gh-pages,
