@@ -122,6 +122,13 @@ pre:hover .copy-code {
 .mermaid {
   background-color: rgb(224, 225, 224);
 }
+
+.svg-container {
+  background: white;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .main {

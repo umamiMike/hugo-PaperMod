@@ -1,8 +1,5 @@
-<style>
-
-</style>
 <div class="svg-container">
-<figure class="{{ .Get 1}}">
+<figure class="">
   {{ readFile (print "" (index .Params 0)) | safeHTML }}
 </figure>
 </div>

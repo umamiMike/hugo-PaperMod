@@ -1,0 +1,113 @@
+baseURL: "http://192.168.0.34"
+title: "my journal"
+theme: hugo-PaperMod
+paginate: 20
+pygmentsCodeFences: true
+enableInlineShortcodes: true
+canonifyURLs: false
+relativeURLs: true
+pluralizelisttitles: false
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    menu:
+      main:
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+        - name: Categories
+          url: categories/
+          weight: 10
+
+services:
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+  author: Theme PaperMod
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+
+  profileMode:
+    enabled: false
+    title: TechnicalMess
+    imageUrl: "#"
+    imageTitle: my image
+    # imageWidth: 120
+    # imageHeight: 120
+    buttons:
+      - name: Archives
+        url: archives
+      - name: Tags
+        url: tags
+
+  homeInfoParams:
+    Title: "TechnicalMess"
+    Content: >
+      - TechnicalMess is the home of my technical and tech adjacent research, exploration and expression
+  socialIcons:
+    - name: github
+      url: "https://github.com/umamiMike"
+    - name: RsS
+      url: "index.xml"
+
+  # label:
+  #   text: "Home"
+  #   icon: /favicon-32x32.png
+  #   iconHeight: 32
+
+  editPost:
+    URL: "https://github.com/umamiMike/corpus/tree/main"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+enableEmoji: true
+
+minify:
+  disableXML: true
+
+privacy:
+  vimeo:
+    disabled: false
+    simple: true
+
+  twitter:
+    disabled: false
+    enableDNT: true
+    simple: true
+
+  instagram:
+    disabled: false
+    simple: true
+
+  youtube:
+    disabled: false
+    privacyEnhanced: true
