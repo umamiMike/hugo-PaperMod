@@ -129,9 +129,6 @@ pre:hover .copy-code {
   max-height: 100vh;
   overflow: hidden;
 }
-.entry-footer {
-  display: flex;
-}
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

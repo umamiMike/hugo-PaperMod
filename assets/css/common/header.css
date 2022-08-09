@@ -16,6 +16,10 @@
   display: flex;
   margin: auto var(--gap);
 }
+#menu * {
+  font-weight: bold;
+  /* text-transform: uppercase; */
+}
 
 .logo {
   flex-wrap: inherit;
@@ -30,7 +34,6 @@
   display: inline;
   vertical-align: middle;
   pointer-events: none;
-  transform: translate(0, -10%);
   border-radius: 6px;
   margin-inline-end: 8px;
 }

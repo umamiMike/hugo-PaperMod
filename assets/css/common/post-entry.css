@@ -109,7 +109,8 @@
   font-size: 80%;
   font-weight: bold;
   background-color: var(--section);
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   transition: font-size 0.2s;
 }
 
@@ -136,12 +137,7 @@
   .list-tags {
     flex-direction: row;
   }
-}
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+  .entry-footer {
+    display: flex;
+  }
 }

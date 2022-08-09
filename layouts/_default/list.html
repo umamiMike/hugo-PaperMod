@@ -44,7 +44,8 @@
 
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
     <h2>
-      {{- if  .Title }} {{- .Title }}
+      {{- if  .Title }}
+      {{- .Title }}
       {{- else }} {{.File.TranslationBaseName}} {{- end }}
     {{- if .Draft }}   ◒{{- end }}
     </h2>
