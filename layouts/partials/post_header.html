@@ -1,10 +1,11 @@
 
     {{ partial "breadcrumbs.html" . }}
   <header class="post-header">
-    <h3 class="post-title">
+    <h1>
       {{ .Title }}
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
-    </h3>
+    </h1>
+    {{- partial "post_footer.html" . }} 
     {{- partial "post_meta-all.html" . }}
     {{- if .Description }}
     <div class="post-description">

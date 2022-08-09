@@ -19,8 +19,9 @@
         {{- end }}
       </div>
     </div>
-    {{- partial "post_footer.html" . }} {{- if (.Param "comments") }} {{-
-    partial "comments.html" . }} {{- end }}
+    {{- if (.Param "comments") }} 
+    {{- partial "comments.html" . }} 
+    {{- end }}
   </article>
 </div>
 {{- end }}

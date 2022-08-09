@@ -27,7 +27,12 @@
 #searchResults {
   position: absolute;
   visibility: inherit;
-  display: inline-block;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  background-color: var(--dd-bg);
+
+  gap: 2px;
   left: 10%;
   top: 100%;
   width: 80%;
@@ -38,7 +43,8 @@
   list-style: none;
   margin-left: 0em;
   background-color: var(--tertiary);
-  border-bottom: 1px dotted var(--secondary);
+  width: 33%;
+  /* border-bottom: 1px dotted var(--secondary); */
 }
 #searchResults li .title {
   /* margin-bottom: 10px; */
@@ -47,7 +53,7 @@
 
 #searchResults a {
   text-decoration: none !important;
-  padding: 2px;
+  /* padding: 2px; */
   display: inline-block;
 }
 #searchResults li:hover,

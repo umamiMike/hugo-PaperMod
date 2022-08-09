@@ -59,6 +59,7 @@
 
 .entry-header {
   font-size: 0.8rem;
+  flex: 3;
 }
 .post-entry .description {
   display: none;
@@ -78,9 +79,7 @@
 .entry-footer {
   color: var(--secondary);
   font-size: 13px;
-}
-
-.entry-link {
+  display: none;
 }
 
 .entry-cover,
@@ -123,4 +122,26 @@
   background: var(--section-active);
   font-size: 100%;
   transition: font-size 0.2s;
+}
+
+@media (min-width: 576px) {
+  .list-tags {
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .list-tags {
+    flex-direction: row;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }

@@ -2,10 +2,7 @@
   width: 80%;
   max-width: 800px;
   margin: 0 auto;
-}
-
-#l_sidebar {
-  /* background-color: black; */
+  flex: 1;
 }
 
 .content {
@@ -34,6 +31,10 @@
 
 .main.page {
   max-width: var(--main-width);
+}
+
+.site-header {
+  border-bottom: solid 1px var(--tertiary);
 }
 
 .page-header {
@@ -128,6 +129,9 @@ pre:hover .copy-code {
   max-height: 100vh;
   overflow: hidden;
 }
+.entry-footer {
+  display: flex;
+}
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -171,10 +175,10 @@ pre:hover .copy-code {
   }
 
   h1 {
-    font-size: 1.3em;
+    /* font-size: 1.3em; */
   }
   h2 {
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
   }
   h3 {
     font-size: 1.05em;

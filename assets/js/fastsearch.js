@@ -6,6 +6,7 @@ var first = list.firstChild; // first child of search list
 var last = list.lastChild; // last child of search list
 var maininput = document.getElementById("searchInput"); // input box for search
 var resultsAvailable = false; // Did we get any search results?
+console.log("assets js fastsearch 9");
 
 // ==========================================
 // The main keyboard event listener running the show

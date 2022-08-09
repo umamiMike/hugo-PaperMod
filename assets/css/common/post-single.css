@@ -6,11 +6,13 @@
 }
 .post-header {
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: calc(var(--gap) * 2);
   border-bottom: solid 1px var(--tertiary);
 }
-.post-title {
-  margin-bottom: 2px;
+.post-header > * {
+  flex: 50%;
 }
 
 .post-description {
@@ -21,7 +23,8 @@
 .post-meta,
 .breadcrumbs {
   color: var(--secondary);
-  font-size: 14px;
+  /* font-size: 14px; */
+  flex: 100%;
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 4px;
@@ -48,16 +51,16 @@
 }
 
 .post-content h1 {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 40px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-size: 32px;
   border-top: solid 1px var(--tertiary);
 }
 
 .post-content h2 {
   margin-top: var(--gap);
   margin-bottom: var(--gap);
-  font-size: 32px;
+  font-size: 26px;
 }
 
 .post-content h3 {
@@ -294,8 +297,8 @@ dt::after {
 }
 .post-content details {
   margin-left: 1em;
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   background-color: var(--entry);
 }
 
@@ -360,9 +363,9 @@ dt::after {
 .post-tags a,
 .share-buttons,
 .paginav {
-  border-radius: var(--radius);
-  background: var(--code-bg);
-  border: 1px solid var(--border);
+  /* border-radius: var(--radius); */
+  /* background: var(--code-bg); */
+  /* border: 1px solid var(--border); */
 }
 
 .post-tags a {
@@ -372,7 +375,7 @@ dt::after {
   color: var(--secondary);
   font-size: 14px;
   line-height: 34px;
-  background: var(--tertiary);
+  /* background: var(--tertiary); */
 }
 
 .post-tags a:hover {
@@ -414,8 +417,8 @@ dt::after {
   transition: transform 0.1s;
 }
 
-.share-buttons svg:active {
-  transform: scale(0.96);
+.share-buttons svg:hover {
+  transform: scale(0.86);
 }
 
 h1:hover .anchor,
@@ -507,6 +510,16 @@ h6:hover .anchor {
   text-align: center;
   margin-left: 4em;
   margin-right: 4em;
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .list-tags {
+    flex-direction: row;
+  }
+  .post-footer {
+    display: flex;
+  }
 }
 
 @media print {
@@ -615,9 +628,6 @@ h6:hover .anchor {
     overflow: hidden;
   }
 
-  .post-content a {
-    /* color: rgb(45, 45, 45); */
-  }
   .post-content details {
     page-break-inside: avoid;
   }
