@@ -501,7 +501,7 @@ h6:hover .anchor {
     /* line-height: 1em; */
   }
   #fastSearch,
-  .post-header {
+  .post-header, .breadcrumbs {
     visibility: hidden;
   }
   .post-content {
@@ -583,7 +583,7 @@ h6:hover .anchor {
   .post-content ul,
   ol,
   img,
-  div {
+  div, p {
     page-break-inside: avoid;
   }
   /* .overview { */
