@@ -10,18 +10,15 @@
 }
 
 #fastSearch input {
-  /* height: 31px; */
-  /* font-size: 1.6em; */
   color: var(--primary);
-  /* font-weight: bold; */
   background-color: var(--tertiary);
   border: 1px solid var(--middle);
-  /* border-radius: 3px 3px 0px 0px; */
   outline: none;
   text-align: left;
   /* display: block; */
   height: 24px;
-  width: 80%;
+  /* width: 80%; */
+  width: auto;
 }
 
 #searchResults {

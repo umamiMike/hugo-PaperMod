@@ -14,11 +14,10 @@
 .logo,
 #menu {
   display: flex;
-  margin: auto var(--gap);
+  gap: var(--gap);
 }
 #menu * {
-  font-weight: bold;
-  /* text-transform: uppercase; */
+  /* font-weight: bold; */
 }
 
 .logo {
@@ -26,16 +25,12 @@
 }
 
 .logo a {
-  font-size: 24px;
   font-weight: 700;
 }
 
 .logo a img {
-  display: inline;
-  vertical-align: middle;
+  box-sizing: border-box;
   pointer-events: none;
-  border-radius: 6px;
-  margin-inline-end: 8px;
 }
 
 #theme-toggle svg {
@@ -44,7 +39,6 @@
 
 button#theme-toggle {
   font-size: 26px;
-  margin: auto 4px;
 }
 
 body.dark #moon {
