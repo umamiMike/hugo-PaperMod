@@ -1,0 +1,92 @@
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .main {
+  }
+  .post-entry .description {
+    display: initial;
+  }
+
+  .list-tags {
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .list-tags {
+    flex-direction: row;
+  }
+  .entry-footer {
+    display: flex;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+
+@media screen and (max-width: 768px) {
+    /* theme-vars */
+    :root {
+        --gap: 14px;
+    }
+
+    /* profile-mode */
+    .profile img {
+        /* transform: scale(0.85); */
+    }
+
+    /* post-entry */
+    .first-entry {
+        min-height: 260px;
+    }
+
+    /* archive */
+    .archive-month {
+        flex-direction: column;
+    }
+
+    .archive-year {
+        margin-top: 20px;
+    }
+
+    /* footer */
+    .footer {
+        padding: calc((var(--footer-height) - var(--gap) - 10px) / 2) var(--gap);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* reset */
+    ::-webkit-scrollbar {
+        width: 19px;
+        height: 11px;
+    }
+}
+
+/* footer */
+@media screen and (max-width: 900px) {
+    .list .top-link {
+        transform: translateY(-5rem);
+    }
+}
+
+@media (prefers-reduced-motion) {
+    /* terms; profile-mode; post-single; post-entry; post-entry; search; search */
+    .terms-tags a:active,
+    .button:active,
+    .share-buttons svg:active,
+    .post-entry:active,
+    .top-link,
+    #searchResults .focus,
+    #searchResults li:active {
+        transform: none;
+    }
+}
+

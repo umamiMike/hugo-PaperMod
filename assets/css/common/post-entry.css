@@ -125,19 +125,3 @@
   transition: font-size 0.2s;
 }
 
-@media (min-width: 576px) {
-  .list-tags {
-    flex-direction: column;
-    display: flex;
-  }
-}
-
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .list-tags {
-    flex-direction: row;
-  }
-  .entry-footer {
-    display: flex;
-  }
-}
