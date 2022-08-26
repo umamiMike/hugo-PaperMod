@@ -1,0 +1,22 @@
+@media print {
+  body {
+    font-size: 0.7rem;
+    display: initial;
+  }
+
+  #fastSearch,
+  .post-header {
+    visibility: hidden;
+  }
+
+  .list-tags li {
+    font-size: 0.8em;
+    background: white;
+  }
+  p,
+  ol,
+  ul {
+    line-height: 1.1em;
+    max-width: 90ch;
+  }
+}

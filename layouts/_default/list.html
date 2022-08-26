@@ -11,9 +11,6 @@
 {{- $pages := .RegularPages }}
 
 {{- $paginator := .Paginate $pages }}
-  {{- if and .IsHome .Site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
-  {{- partial "home_info.html" . }}
-  {{- end }}
   {{ if .Sections }}
   {{- end }}
   {{ partial "section_menu.html" . }}
