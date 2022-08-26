@@ -10,6 +10,15 @@
     flex-direction: column;
     display: flex;
   }
+
+.profile img {
+    display: inline-table;
+    border-radius: 50%;
+    pointer-events: none;
+    aspect-ratio: 1 / 1;
+    width: 100px;
+    height: 100px;
+}
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -35,11 +44,6 @@
     /* theme-vars */
     :root {
         --gap: 14px;
-    }
-
-    /* profile-mode */
-    .profile img {
-        /* transform: scale(0.85); */
     }
 
     /* post-entry */

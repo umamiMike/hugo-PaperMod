@@ -16,9 +16,6 @@
   display: flex;
   gap: var(--gap);
 }
-#menu * {
-  /* font-weight: bold; */
-}
 
 .logo {
   flex-wrap: inherit;
