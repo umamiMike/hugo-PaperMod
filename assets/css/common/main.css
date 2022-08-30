@@ -29,6 +29,19 @@
   margin-bottom: calc(var(--gap) / 2);
 }
 
+.connexions {
+  display: flex;
+  flex-wrap: wrap;
+gap: 4px;
+padding: 4px;
+}
+.connexions > * {
+width: 30%;
+border: solid 1px var(--tertiary);
+}
+
+
+
 .posts {
   margin-top: var(--gap);
   margin-bottom: var(--gap);
