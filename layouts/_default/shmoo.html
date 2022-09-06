@@ -1,114 +1,46 @@
-{{- define "main" }} {{- if (.Param "ShowToc") }} {{- partial "toc.html" . }}
-{{- end }}
-<style type="text/css" media="screen">
-section {
-min-height: 80vh;
+{{ define "main" }}
+<style>
+#section-1, #section-2 {
+height: 60vh;
 }
+  .section-nav {
+    display: flex;
+justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    background-color: var(--tertiary);
+  }
 </style>
-<div class="content">
-  <a href="#b" target="_blank">Anchor Text</a>
-  <a href="#b" target="_blank">Anchor Text</a>
-  <a href="#c" target="_blank">Anchor Text</a>
-<section id="a">
- Morbi cursus elementum magna ut lobortis. Fusce sed mi eget massa vestibulum
- ullamcorper ut vel est. Nullam molestie odio quis nisl porta, vel pellentesque
- arcu mattis. Nulla facilisi. Integer commodo elit pulvinar, consectetur massa
- id, faucibus massa. Integer efficitur lacus in nibh congue luctus. Nullam
- sodales dui quis lorem auctor posuere. Cras imperdiet posuere libero, quis
- sagittis sapien sagittis nec. Etiam auctor ante id metus lacinia, id pretium
- nunc ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et
- ultrices posuere cubilia curae; Nullam id ultricies sem. Proin quis bibendum
- libero. Nam nec posuere mi. Donec non interdum turpis. Integer at sem purus.
+ <h1>{{ .Title }}</h1>
 
- Aenean porta dignissim libero, a fringilla nibh tincidunt in. Vestibulum eget
- scelerisque nisl. Morbi pretium, risus in venenatis dictum, purus lectus
- malesuada libero, vitae pharetra nisl nisl eu lorem. Cras in tellus nec velit
- viverra laoreet non vitae dui. Pellentesque eleifend leo mi, sed tempus velit
- hendrerit in. Proin egestas magna dictum mi facilisis, quis condimentum libero
- luctus. Duis diam eros, tempus in vulputate non, imperdiet hendrerit magna.
- Mauris tempus interdum nulla, non lacinia eros tempor ut. Nullam viverra neque
- lacus, maximus lobortis nisi lobortis egestas. Cras elementum volutpat eros at
- sollicitudin. Proin tempor mi viverra elit placerat, a gravida libero
- imperdiet. Donec sollicitudin, leo non dapibus egestas, lorem magna fringilla
- velit, eu suscipit odio ligula id velit. Vestibulum eget ultrices libero.
- Etiam auctor velit erat, ac accumsan erat pulvinar pretium.
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
- 
-</section>
-<section id="b">
+  {{- $sectionDelimiter := "<!-- section break -->" -}}
+  {{- $rawContentSections := split .RawContent $sectionDelimiter -}}
+  {{- if gt (len $rawContentSections) 1 -}}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-  
-</section>
-<section id="c">
- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
- tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
- quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
- consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
- cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
- proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
- lore
- 
+  <ul class="section-nav">
+  {{- range  $i, $el := $rawContentSections }}
+  <li>
+    <!-- {{ substr .  0 4 }} -->
+    {{ $section := add 1 $i  }}
+    <a href="#section-{{ $section }}"> section {{ $section }}</a>
+  </li>
+  {{ end }}
+  </ul>
+  {{- range  $i, $el := $rawContentSections }}
+    {{ $section := add 1 $i  }}
+    <section id="section-{{ $section }}"> {{ $el | markdownify }}</section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  {{ end }}
+  {{- else -}}
+    <div id="content-not-split-into-sections">
+      {{ .Content }}
+    </div>
+  {{- end -}}
 
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie
- massa metus, vitae sagittis elit faucibus facilisis. Pellentesque pulvinar,
- nulla sed laoreet scelerisque, sapien velit auctor neque, nec elementum odio
- urna nec elit. Nullam finibus dui ac sagittis viverra. Donec eget augue at
- enim luctus tempor. Fusce erat nisl, aliquet nec imperdiet ac, facilisis vitae
- enim. Donec leo nisl, vulputate non velit ac, auctor commodo lacus. Interdum
- et malesuada fames ac ante ipsum primis in faucibus. Nunc consectetur arcu in
- nisl ullamcorper hendrerit sit amet quis ante. Proin varius tellus nisl, at
- tincidunt nisl fringilla eget. Nam mi nulla, varius sed ultrices at, aliquet
- vitae erat. Aenean sed lacus eu mi vulputate sollicitudin. Curabitur et tempus
- purus. Integer imperdiet neque quis leo pulvinar cursus. Curabitur dignissim,
- arcu euismod venenatis blandit, justo magna rutrum dui, vel malesuada lectus
- nisi sed sapien.
+{{ end }}
 
- Morbi cursus elementum magna ut lobortis. Fusce sed mi eget massa vestibulum
- ullamcorper ut vel est. Nullam molestie odio quis nisl porta, vel pellentesque
- arcu mattis. Nulla facilisi. Integer commodo elit pulvinar, consectetur massa
- id, faucibus massa. Integer efficitur lacus in nibh congue luctus. Nullam
- sodales dui quis lorem auctor posuere. Cras imperdiet posuere libero, quis
- sagittis sapien sagittis nec. Etiam auctor ante id metus lacinia, id pretium
- nunc ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et
- ultrices posuere cubilia curae; Nullam id ultricies sem. Proin quis bibendum
- libero. Nam nec posuere mi. Donec non interdum turpis. Integer at sem purus.
-
- Aenean porta dignissim libero, a fringilla nibh tincidunt in. Vestibulum eget
- scelerisque nisl. Morbi pretium, risus in venenatis dictum, purus lectus
- malesuada libero, vitae pharetra nisl nisl eu lorem. Cras in tellus nec velit
- viverra laoreet non vitae dui. Pellentesque eleifend leo mi, sed tempus velit
- hendrerit in. Proin egestas magna dictum mi facilisis, quis condimentum libero
- luctus. Duis diam eros, tempus in vulputate non, imperdiet hendrerit magna.
- Mauris tempus interdum nulla, non lacinia eros tempor ut. Nullam viverra neque
- lacus, maximus lobortis nisi lobortis egestas. Cras elementum volutpat eros at
- sollicitudin. Proin tempor mi viverra elit placerat, a gravida libero
- imperdiet. Donec sollicitudin, leo non dapibus egestas, lorem magna fringilla
- velit, eu suscipit odio ligula id velit. Vestibulum eget ultrices libero.
- Etiam auctor velit erat, ac accumsan erat pulvinar pretium.
-
- Nunc varius nibh non nisl porttitor, non elementum quam cursus. Aenean
- dignissim diam elit, non tincidunt ante scelerisque ac. Vestibulum quis nunc
- id lacus pharetra malesuada. Vestibulum tincidunt, risus vel pharetra
- hendrerit, quam justo blandit nunc, at finibus turpis orci non lectus. Morbi
- sed purus non lectus porttitor tempor. Duis eu viverra felis. Donec id
- scelerisque felis, at commodo arcu. Morbi lobortis dui ut nunc convallis
- consectetur. Morbi bibendum consequat ligula, ut congue leo tincidunt
- fermentum. Praesent nec lacus varius, varius neque sed, luctus justo.
- Curabitur faucibus diam eu luctus consectetur. Nullam sed dolor ligula.
- Vivamus id nisi vel nulla fringilla porttitor eget ultricies nisl.
-
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean scelerisque
- risus in elementum consequat. Mauris elementum, tortor suscipit dignissim
- semper, urna risus blandit tellus, et posuere dolor dolor in magna.
- Pellentesque hendrerit, sapien id porttitor finibus, dui velit imperdiet
- ligula, ac porta dui magna eget tortor. Sed nisi urna, fermentum vitae mi vel,
- consequat consectetur arcu. Lorem ipsum dolor sit amet, consectetur adipiscing
- elit. Aliquam finibus, risus eget lacinia dignissim, nisi neque ornare tortor,
- sit amet dapibus dolor magna vel neque. Suspendisse in enim in diam sagittis
- fermentum. In gravida purus enim, non porta erat lacinia vitae. Sed nisl leo,
- ullamcorper non hendrerit et, sodales nec velit. 
-</section>
-</div>
-{{- end }}
 {{/* end main */}}

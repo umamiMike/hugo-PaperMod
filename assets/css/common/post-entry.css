@@ -33,18 +33,25 @@
   -webkit-line-clamp: unset;
 }
 
-.post-entry {
+.posts {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--gap);
+  /* flex-direction: column; */
+}
+
+.post-entry {
+  display: block;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin-bottom: var(--gap);
   padding: var(--gap);
   background: var(--entry);
   border-radius: var(--radius);
   transition: transform 0.4s;
   border: 1px solid var(--border);
+  width: 300px;
 }
 
 .post-entry:hover {
@@ -61,9 +68,9 @@
   font-size: 0.8rem;
   flex: 3;
 }
-.post-entry .description {
-  display: none;
-}
+/* .post-entry .description { */
+/*   display: none; */
+/* } */
 
 .entry-content {
   margin: 8px 0;
