@@ -6,23 +6,33 @@ height: 60vh;
   .section-nav {
     display: flex;
 justify-content: space-evenly;
+list-style-type: none;
     position: sticky;
     top: 0;
     background-color: var(--tertiary);
   }
-</style>
- <h1>{{ .Title }}</h1>
 
+
+  #section-1 {
+    background-color: #ccc;
+    color: #555;
+  }
+</style>
   {{- $sectionDelimiter := "<!-- section break -->" -}}
   {{- $rawContentSections := split .RawContent $sectionDelimiter -}}
   {{- if gt (len $rawContentSections) 1 -}}
 
-  <ul class="section-nav">
+  <ul class="">
   {{- range  $i, $el := $rawContentSections }}
   <li>
-    <!-- {{ substr .  0 4 }} -->
-    {{ $section := add 1 $i  }}
-    <a href="#section-{{ $section }}"> section {{ $section }}</a>
+
+    {{ $collection := split $el " " }}
+
+    <!-- {{ $foo := truncate 10 "" $el | replaceRE "#" "" | replaceRE " " "-" | countrunes }} -->
+    <!-- {{ $section := add 1 $i  }} -->
+    <!-- {{ $foo }} -->
+<!-- {{ replaceRE ".*" "poo" $section 1 }} -->
+    <!-- <a href="#section-{{ $section }}"> section {{ $section }}</a> -->
   </li>
   {{ end }}
   </ul>
