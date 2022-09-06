@@ -13,8 +13,6 @@
 {{- print " dark" }}
 {{- end -}}
 " id="top">
-  In the baseof
-
     {{- partialCached "header.html" . .Page -}}
     <main class="main {{- if (eq .Kind `page`) -}}{{- print " page" -}}{{- end -}}">
         {{- block "main" . }}{{ end }}

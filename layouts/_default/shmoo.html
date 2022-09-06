@@ -1,49 +1,10 @@
-{{ define "main" }}
-<style>
-#section-1, #section-2 {
-height: 60vh;
-}
-  .section-nav {
-    display: flex;
-justify-content: space-evenly;
-list-style-type: none;
-    position: sticky;
-    top: 0;
-    background-color: var(--tertiary);
-  }
-
-
-  #section-1 {
-    background-color: #ccc;
-    color: #555;
-  }
-</style>
   {{- $sectionDelimiter := "<!-- section break -->" -}}
-  {{- $rawContentSections := split .RawContent $sectionDelimiter -}}
+  {{- $rawContentSections := split .Content $sectionDelimiter -}}
   {{- if gt (len $rawContentSections) 1 -}}
 
-  <ul class="">
-  {{- range  $i, $el := $rawContentSections }}
-  <li>
-
-    {{ $collection := split $el " " }}
-
-    <!-- {{ $foo := truncate 10 "" $el | replaceRE "#" "" | replaceRE " " "-" | countrunes }} -->
-    <!-- {{ $section := add 1 $i  }} -->
-    <!-- {{ $foo }} -->
-<!-- {{ replaceRE ".*" "poo" $section 1 }} -->
-    <!-- <a href="#section-{{ $section }}"> section {{ $section }}</a> -->
-  </li>
-  {{ end }}
-  </ul>
   {{- range  $i, $el := $rawContentSections }}
     {{ $section := add 1 $i  }}
     <section id="section-{{ $section }}"> {{ $el | markdownify }}</section>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
   {{ end }}
   {{- else -}}
     <div id="content-not-split-into-sections">
@@ -51,6 +12,3 @@ list-style-type: none;
     </div>
   {{- end -}}
 
-{{ end }}
-
-{{/* end main */}}

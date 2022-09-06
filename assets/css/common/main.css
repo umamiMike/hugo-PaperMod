@@ -154,14 +154,14 @@ pre:hover .copy-code {
 }
 
 .buttons,
-.main .profile {
-    display: flex;
-    /* justify-content: center; */
+.main  {
 }
 
 .profile {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    margin-bottom: 200px;
 }
 
 .main .profile {

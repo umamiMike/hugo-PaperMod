@@ -1,3 +1,33 @@
+<style>
+#section-1, #section-2 {
+height: 60vh;
+}
+  .nav-container {
+
+position: absolute;
+  }
+  .section-nav {
+    display: flex;
+justify-content: space-evenly;
+list-style-type: none;
+    position: sticky;
+    top: 0;
+    background-color: var(--tertiary);
+
+  }
+
+
+  #section-1 {
+    background-color: #ccc;
+    color: #555;
+  }
+</style>
+<div class="nav-container" >
+<ul class="section-nav">
+  {{ range $i, $el := .Params  }}
+  <li>
+    <a href="#section-{{ add 1 $i }}" target="_blank">{{ $el }}</a> 
+  </li>
+  {{ end }}
+</ul>
 <div>
-  toc
-</div>
