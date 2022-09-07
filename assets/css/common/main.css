@@ -29,6 +29,10 @@
   margin-bottom: calc(var(--gap) / 2);
 }
 
+.content a {
+color: var(--link);
+}
+
 .connexions {
   display: flex;
   flex-wrap: wrap;
@@ -46,11 +50,6 @@ border: solid 1px var(--tertiary);
   margin-top: var(--gap);
   margin-bottom: var(--gap);
 }
-.sections .post-entry {
-  /* padding: calc(var(--gap) / 2); */
-  /* border-radius: calc(var(--radius) / 2); */
-}
-
 .main.page {
   max-width: var(--main-width);
 }
