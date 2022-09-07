@@ -56,8 +56,12 @@ border: solid 1px var(--tertiary);
 }
 
 .site-header {
+  top: 0;
   position: sticky;
+
   border-bottom: solid 1px var(--tertiary);
+  background-color: var(--theme);
+  z-index: 100;
 }
 
 .page-header {
