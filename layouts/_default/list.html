@@ -35,6 +35,9 @@
 {{- end }}
 
 <article class="{{ $class }}">
+  {{ with .Params.featured_image }}
+  <img src="/{{ . }}" class="list-featured-image" alt="">
+  {{ end }}
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
 
@@ -56,9 +59,6 @@
       {{- end }}
     </ul>
     {{- end }}
-  {{- if not (.Param "hideMeta") }}
-    {{- partial "post_meta.html" . -}}
-  {{- end }}
 </article>
 {{- end }}
   </div>
