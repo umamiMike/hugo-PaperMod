@@ -2,10 +2,24 @@
 <head>
     {{- partial "head.html" . }}
 </head>
+<style type="text/css" media="screen">
+section {
+height: 400px;
+}
+.container {
+border: 1px solid black;
+}
+section:nth-child(odd) {
+  background-color: var(--middle);
+  font-size: 24px;
+}
+</style>
+
+{{- partial "header.html" . }}
   {{- $sectionDelimiter := "<!-- section break -->" -}}
   {{- $rawContentSections := split .Content $sectionDelimiter -}}
   {{- if gt (len $rawContentSections) 1 -}}
-
+  <div class="container">
   {{- range  $i, $el := $rawContentSections }}
     {{ $section := add 1 $i  }}
     <section id="section-{{ $section }}"> {{ $el | markdownify }}</section>
@@ -17,3 +31,4 @@
   {{- end -}}
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 
+</div>

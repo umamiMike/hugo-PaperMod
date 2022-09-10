@@ -73,6 +73,7 @@ h6 {
 
 .post-content a {
   color: var(--link);
+  text-decoration: none;
 }
 
 .post-content p {

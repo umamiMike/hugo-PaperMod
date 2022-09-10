@@ -46,16 +46,24 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: var(--gap);
-  background: var(--entry);
+  /* background: var(--entry); */
   border-radius: var(--radius);
   transition: transform 0.4s;
   border: 1px solid var(--border);
   width: 300px;
+  max-height: 200px;
+  min-height:100px;
+  overflow: clip;
+}
+.list-featured-image {
+position: absolute;
+width: 100%;
+z-index: -10;
+opacity:0.3;
 }
 
 .post-entry:hover {
-  background: var(--entry-active);
+  /* background: var(--entry-active); */
   transform: scale(0.98);
   transition: transform 0.2s;
 }

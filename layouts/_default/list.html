@@ -34,7 +34,7 @@
 {{- $class = printf "%s %s" $class "section" }}
 {{- end }}
 
-<article class="{{ $class }}">
+<article class="{{ $class }}" id="{{ .Title | safeCSS }}">
   {{ with .Params.featured_image }}
   <img src="/{{ . }}" class="list-featured-image" alt="">
   {{ end }}

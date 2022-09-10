@@ -29,10 +29,6 @@
   margin-bottom: calc(var(--gap) / 2);
 }
 
-.content a {
-color: var(--link);
-}
-
 .connexions {
   display: flex;
   flex-wrap: wrap;
@@ -50,17 +46,17 @@ border: solid 1px var(--tertiary);
   margin-top: var(--gap);
   margin-bottom: var(--gap);
 }
+
 .main.page {
   max-width: var(--main-width);
 }
 
 .site-header {
-  top: 0;
   position: sticky;
-
-  border-bottom: solid 1px var(--tertiary);
+  top: 0;
   background-color: var(--theme);
-  z-index: 100;
+  border-bottom: solid 1px var(--tertiary);
+  z-index: 1000;
 }
 
 .page-header {
@@ -105,9 +101,7 @@ div.highlight,
 pre {
   position: relative;
 }
-.list-featured-image {
-width: 200px;
-}
+
 .list-tags {
   display: none;
   flex-direction: column;
