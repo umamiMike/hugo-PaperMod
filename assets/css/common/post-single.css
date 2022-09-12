@@ -59,7 +59,7 @@
 }
 
 .post-content h1 {
-  border-top: solid 1px var(--tertiary);
+  /* border-top: solid 1px var(--tertiary); */
 }
 
 .post-content h2,
@@ -67,8 +67,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 1em;
-  margin-top: 1em;
+  /* margin-bottom: 1em; */
+  /* margin-top: 1em; */
 }
 
 .post-content a {
@@ -87,7 +87,6 @@ h6 {
 
 .post-content a,
 .toc a:hover {
-  box-shadow: 0 1px 0;
 }
 
 .post-content a code {
@@ -99,7 +98,6 @@ h6 {
 .post-content del {
   text-decoration: none;
   background: linear-gradient(to right, var(--primary) 100%, transparent 0) 0
-    50%/1px 1px repeat-x;
 }
 .post-content figure {
   margin: 2rem 0;
@@ -470,17 +468,28 @@ h6:hover .anchor {
 [dir="rtl"] .paginav .next {
   text-align: left;
 }
+
 .block {
   display: flex;
-  /* margin: 0em 0em 1em 0em; */
   justify-content: space-between;
-  margin-bottom: 0.7em;
-  margin-top: 1.3em;
 }
 
-.centered {
-  /* background-color: var(--tertiary); */
-  text-align: center;
-  margin-left: 4em;
-  margin-right: 4em;
+.c-10 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.c-20 {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.c-30 {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.c-40 {
+  margin-left: 40%;
+  margin-right: 40%;
 }

@@ -3,7 +3,12 @@
   color: red;
 }
 .included {
-  font-size: 0.92rem;
+  /* font-size: 0.92rem; */
+}
+.foo {
+  align-items: center;
+width: 40%;
+/* margin-left: 25%; */
 }
 
 /* Content */
