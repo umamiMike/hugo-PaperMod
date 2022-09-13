@@ -109,12 +109,10 @@ pre {
 
 .list-tags {
   display: none;
-  flex-direction: column;
 }
 
 .list-tags li {
   display: inline-block;
-  margin-inline-end: 3px;
 }
 
 .list-tags a {

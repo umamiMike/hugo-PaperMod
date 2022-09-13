@@ -36,7 +36,7 @@ outputs:
 params:
   imagehost: "https://storage.googleapis.com/mwcw-blog-images"
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+  description: "Theme PaperMod - https://github.com/umamiMike/hugo-PaperMod"
   author: Theme PaperMod
   defaultTheme: auto
   # disableThemeToggle: true
@@ -50,9 +50,9 @@ params:
   ShowToc: true
 
   profileMode:
-    enabled: false
-    title: TechnicalMess
-    imageUrl: ""
+    enabled: true
+    title: Profile mode title
+    imageUrl: "woman-profile-unsplash.jpg"
     imageTitle: my image
     # imageWidth: 120
     # imageHeight: 120
@@ -63,9 +63,8 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "Projects.TechnicalMess"
-    Content: >
-      - Projects.TechnicalMess is where I track my ideas and works-in-progress.
+    Title: "Mike Wildings variation on hugoPapermod"
+    Content: home info params content 
   socialIcons:
     - name: github
       url: "https://github.com/umamiMike"

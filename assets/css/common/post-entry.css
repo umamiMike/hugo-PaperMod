@@ -42,7 +42,8 @@
 }
 
 .post-entry {
-  display: block;
+  /* display: block; */
+  overflow: clip;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -52,8 +53,19 @@
   border: 1px solid var(--border);
   width: 300px;
   max-height: 200px;
+  /* height: 200px; */
   min-height:100px;
-  overflow: clip;
+}
+
+.entry-title {
+font-weight: bold;
+font-size: 1.2em;
+margin-top: 8px;
+
+}
+
+.description p {
+margin: 12px;
 }
 .list-featured-image {
 position: absolute;

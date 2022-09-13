@@ -474,22 +474,41 @@ h6:hover .anchor {
   justify-content: space-between;
 }
 
+.c-05 {
+  margin-left: 5%;
+}
+
 .c-10 {
   margin-left: 10%;
-  margin-right: 10%;
 }
 
 .c-20 {
   margin-left: 20%;
-  margin-right: 20%;
 }
 
 .c-30 {
   margin-left: 30%;
-  margin-right: 30%;
 }
 
 .c-40 {
   margin-left: 40%;
-  margin-right: 40%;
+}
+.mr-10 {
+
+}
+.mr-10 > * {
+
+  margin-right: 10%;
+}
+
+.w-70 {
+width: 70%;
+}
+
+.w-60 {
+width: 60%;
+}
+
+.w-50 {
+width: 50%;
 }
