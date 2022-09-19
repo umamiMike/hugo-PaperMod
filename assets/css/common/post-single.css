@@ -472,11 +472,18 @@ h6:hover .anchor {
 .block {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+}
+.block p,h1,h2,h3,h4 {
+text-align: left;
+margin-bottom: .1em;
 }
 
+
 .c-05 {
-  margin-left: 5%;
+  margin-left: 1%;
 }
+
 
 .c-10 {
   margin-left: 10%;
@@ -511,4 +518,10 @@ width: 60%;
 
 .w-50 {
 width: 50%;
+}
+.center {
+text-align: center;
+}
+.font-large {
+font-size: 18pt;
 }
