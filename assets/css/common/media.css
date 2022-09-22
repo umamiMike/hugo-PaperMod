@@ -1,7 +1,5 @@
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .main {
-  }
   .post-entry .description {
     display: initial;
   }
@@ -10,27 +8,26 @@
     flex-direction: row;
     flex-wrap: wrap-reverse;
     display: flex;
-    align-items:flex-end;
-    position: relative;
+    align-items: flex-end;
+    position: absolute;
     right: 0;
     bottom: 0;
     min-width: 50%;
   }
+  .entry-body {
+    display: block;
+    margin-bottom: 20px;
+  }
 
-.profile img {
+  .profile img {
     display: inline-table;
     border-radius: 50%;
     pointer-events: none;
-    aspect-ratio: 1 / 1;
-    width: 100px;
-    height: 100px;
-}
+  }
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .list-tags {
-  }
   .entry-footer {
     display: flex;
   }
@@ -44,58 +41,56 @@
 @media (min-width: 1200px) {
 }
 
-
 @media screen and (max-width: 768px) {
-    /* theme-vars */
-    :root {
-        --gap: 14px;
-    }
+  /* theme-vars */
+  :root {
+    --gap: 14px;
+  }
 
-    /* post-entry */
-    .first-entry {
-        min-height: 260px;
-    }
+  /* post-entry */
+  .first-entry {
+    min-height: 260px;
+  }
 
-    /* archive */
-    .archive-month {
-        flex-direction: column;
-    }
+  /* archive */
+  .archive-month {
+    flex-direction: column;
+  }
 
-    .archive-year {
-        margin-top: 20px;
-    }
+  .archive-year {
+    margin-top: 20px;
+  }
 
-    /* footer */
-    .footer {
-        padding: calc((var(--footer-height) - var(--gap) - 10px) / 2) var(--gap);
-    }
+  /* footer */
+  .footer {
+    padding: calc((var(--footer-height) - var(--gap) - 10px) / 2) var(--gap);
+  }
 }
 
 @media screen and (min-width: 768px) {
-    /* reset */
-    ::-webkit-scrollbar {
-        width: 19px;
-        height: 11px;
-    }
+  /* reset */
+  ::-webkit-scrollbar {
+    width: 19px;
+    height: 11px;
+  }
 }
 
 /* footer */
 @media screen and (max-width: 900px) {
-    .list .top-link {
-        transform: translateY(-5rem);
-    }
+  .list .top-link {
+    transform: translateY(-5rem);
+  }
 }
 
 @media (prefers-reduced-motion) {
-    /* terms; profile-mode; post-single; post-entry; post-entry; search; search */
-    .terms-tags a:active,
-    .button:active,
-    .share-buttons svg:active,
-    .post-entry:active,
-    .top-link,
-    #searchResults .focus,
-    #searchResults li:active {
-        transform: none;
-    }
+  /* terms; profile-mode; post-single; post-entry; post-entry; search; search */
+  .terms-tags a:active,
+  .button:active,
+  .share-buttons svg:active,
+  .post-entry:active,
+  .top-link,
+  #searchResults .focus,
+  #searchResults li:active {
+    transform: none;
+  }
 }
-

@@ -179,8 +179,6 @@ pre:hover .copy-code {
     border-radius: 50%;
     pointer-events: none;
     aspect-ratio: 1 / 1;
-    width: 200px;
-    height: 200px;
 }
 
 .buttons {
