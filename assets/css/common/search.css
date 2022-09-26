@@ -13,10 +13,9 @@
   color: var(--primary);
   background-color: var(--tertiary);
   border: 1px solid var(--middle);
-  outline: none;
   text-align: left;
   /* display: block; */
-  height: 24px;
+  height: 20px;
   /* width: 80%; */
   width: auto;
 }

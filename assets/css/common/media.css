@@ -17,6 +17,7 @@
   .entry-body {
     display: block;
     margin-bottom: 20px;
+
   }
 
   .profile img {
@@ -30,6 +31,13 @@
 @media (min-width: 768px) {
   .entry-footer {
     display: flex;
+  }
+
+  .profile {
+
+    margin-top: 100px;
+    gap: 4rem;    
+    flex-direction:row;
   }
 }
 

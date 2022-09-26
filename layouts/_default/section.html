@@ -1,0 +1,84 @@
+{{- define "main" }}
+{{- if (and .Site.Params.profileMode.enabled .IsHome) }}
+
+{{- partial "index_profile.html" . }}
+  {{ partial "page_header.html" . }}
+  {{- partial "section_content.html" . }}
+
+<div class="content">
+
+{{- end }}
+{{- $pages := .RegularPages.ByTitle }}
+
+{{- $paginator := .Paginate $pages }}
+  {{ if .Sections }}
+  {{- end }}
+  {{ partial "section_menu.html" . }}
+  <div class="posts">
+
+{{- $term := .Data.Term }}
+
+{{- range $index, $page := $paginator.Pages }}
+
+{{- $class := "post-entry" }}
+
+{{- $user_preferred := or .Site.Params.disableSpecial1stPost .Site.Params.homeInfoParams }}
+{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
+{{- $class = "first-entry" }}
+{{- else if $term }}
+{{- $class = "post-entry tag-entry" }}
+{{- end }}
+
+{{- with .IsSection -}}
+{{- $class = printf "%s %s" $class "section" }}
+{{- end }}
+
+<article class="{{ $class }}" id="{{ .Title | safeCSS }}">
+  <div class="entry-body">
+
+  {{ with .Params.featured_image }}
+  <img src="/{{ . }}" class="list-featured-image" alt="">
+  {{ end }}
+  {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
+  {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+
+  <a class="entry-title" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
+      {{- if  .Title }}
+      {{- .Title }}
+      {{- else }} {{.File.TranslationBaseName}} {{- end }}
+      {{- if .Draft }}  <sup>◒</sup> {{- end }}
+  </a>
+  <div class="description">
+ <p>{{ .Description  }}</p>
+
+  </div>
+
+  </div>
+    {{- with .Params.tags }}
+    <ul class="list-tags">
+      {{- range . }}
+      <li> <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a> </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+
+</article>
+{{- end }}
+  </div>
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">« {{ i18n "prev_page" }}</a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a class="next" href="{{ $paginator.Next.URL | absURL }}">{{ i18n "next_page" }} »</a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+</div>
+
+{{- end }}{{/* end profileMode */}}
+

@@ -3,10 +3,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: calc(var(--nav-width) + var(--gap) * 2);
+  margin-left: 2px;
+  margin-right: 2px;
   /* line-height: var(--header-height); */
   top: 0;
   position: sticky;
 }
+
 
 .nav a {
   display: block;

@@ -1,21 +1,30 @@
 <div class="profile">
     {{- with .Site.Params.profileMode }}
-        <h2>{{ .title | default $.Site.Title | markdownify }}</h2>
-        {{- if .imageUrl -}}
-        <img src="{{ .imageUrl }}" alt="{{ .imageTitle | default "profile image" }}"
-            height="{{ .imageHeight }}" width="{{ .imageWidth | default 150 }}" />
+    <div>
+
+      <!-- <h2>{{ .title | default $.Site.Title | markdownify }}</h2> -->
+      {{- if .imageUrl -}}
+      <img src="{{ .imageUrl }}" alt="{{ .imageTitle | default "profile image" }}"
+          height="{{ .imageHeight }}" width="{{ .imageWidth | default 150 }}" />
+      {{- end }}
+      <span>{{ .subtitle | markdownify }}</span>
+
+    </div>
+        <div>
+        {{ $.Site.Data.about.title | markdownify }}
+        <br>
+        {{ $.Site.Data.about.description | markdownify }}
+        {{- partial "social_icons.html" $.Site.Params.socialIcons -}}
+        {{- with .buttons }}
+        <div class="buttons">
+            {{- range . }}
+            <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name | title }}">
+                <span class="button-inner">{{ .name | title }}</span>
+            </a>
+            {{- end }}
+        </div>
         {{- end }}
-        <span>{{ .subtitle | markdownify }}</span>
-        <!-- {{- partial "social_icons.html" $.Site.Params.socialIcons -}} -->
-        <!-- {{- with .buttons }} -->
-        <!-- <div class="buttons"> -->
-        <!--     {{- range . }} -->
-        <!--     <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name | title }}"> -->
-        <!--         <span class="button-inner">{{ .name | title }}</span> -->
-        <!--     </a> -->
-        <!--     {{- end }} -->
-        <!-- </div> -->
-        <!-- {{- end }} -->
+        </div>
     </div>
   {{- end }}
 </div>
