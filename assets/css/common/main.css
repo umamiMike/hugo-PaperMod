@@ -45,8 +45,6 @@ width: 30%;
 border: solid 1px var(--tertiary);
 }
 
-
-
 .posts {
   margin-top: var(--gap);
   margin-bottom: var(--gap);
@@ -56,13 +54,6 @@ border: solid 1px var(--tertiary);
   max-width: var(--main-width);
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  background-color: var(--theme);
-  border-bottom: solid 1px var(--tertiary);
-  z-index: 1000;
-}
 
 .page-header {
   padding-bottom: 4px;

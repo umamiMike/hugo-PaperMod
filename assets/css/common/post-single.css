@@ -125,8 +125,8 @@ h6 {
   margin-bottom: var(--gap);
 }
 
-.post-content dt {
-  font-weight: 500;
+dt {
+  font-weight: bold;
   color: var(--primary);
 }
 
@@ -251,6 +251,7 @@ dt::after {
   border-radius: 2px;
   border: solid var(--tertiary) 1px;
   padding: 1em;
+  max-width: 80%;
 }
 
 .post-content img[src*="#center"] {
