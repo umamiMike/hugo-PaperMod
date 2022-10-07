@@ -1,28 +1,84 @@
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: calc(var(--nav-width) + var(--gap) * 2);
-  margin-left: 2px;
-  margin-right: 2px;
-  /* line-height: var(--header-height); */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--entry-active);
+  border-bottom: solid 1px var(--tertiary);
+  z-index: 1000;
   top: 0;
   position: sticky;
+  min-height: 24px;
 }
+
+.nav-toggle {
+display: none;
+}
+
+.nav-toggle-label{
+position: absolute;
+right: 0;
+border: 1px solid red;
+height: 100%;
+display: flex;
+align-items: center;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::after,
+.nav-toggle-label span::before {
+display: block;
+background: black;
+height: 2px;
+width: 1em;
+border-radius: 2px;
+position: relative;
+}
+
+.nav-toggle-label span::after,
+.nav-toggle-label span::before {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle:checked ~ .nav {
+  display: block;
+
+
+}
+.nav {
+  border: 1px solid blue;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* line-height: var(--header-height); */
+display: none;
+  width: fit-content;
+}
+
 
 
 .nav a {
   display: block;
 }
 
-.logo,
 #menu {
-  display: flex;
-  gap: var(--gap);
+  display: inline-flex;
 }
 
 .logo {
+  border: 1px solid red;
   flex-wrap: inherit;
+  width: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: fit-content;
+
 }
 
 .logo a {
@@ -68,7 +124,7 @@ body:not(.dark) #sun {
 
 #menu .active {
   font-weight: 500;
-  border-bottom: 2px solid currentColor;
+  /* border-bottom: 2px solid currentColor; */
 }
 
 .lang-switch li,
