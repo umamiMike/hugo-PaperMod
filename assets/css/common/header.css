@@ -1,28 +1,76 @@
+
 .nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: calc(var(--nav-width) + var(--gap) * 2);
-  margin-left: 2px;
-  margin-right: 2px;
-  /* line-height: var(--header-height); */
+display: none;
+}
+
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--entry-active);
+  border-bottom: solid 1px var(--tertiary);
+  z-index: 1000;
   top: 0;
   position: sticky;
-}
-
-
-.nav a {
-  display: block;
-}
-
-.logo,
-#menu {
+  min-height: 24px;
   display: flex;
-  gap: var(--gap);
+  justify-content: space-between;
+}
+
+.nav-toggle {
+display: none;
+}
+
+.nav-toggle-label{
+position: absolute;
+right: 0;
+height: 100%;
+display: flex;
+align-items: center;
+margin-right: 8px;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::after,
+.nav-toggle-label span::before {
+display: block;
+background: black;
+height: 2px;
+width: 1em;
+border-radius: 2px;
+position: relative;
+}
+
+.nav-toggle-label span::after,
+.nav-toggle-label span::before {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::after {
+  top: 5px;
+}
+.nav-toggle-label span::before {
+  bottom: 5px;
+}
+
+.nav-toggle:checked ~ .nav {
+  display: block;
+
+
+}
+
+
+#menu {
+  display: inline-flex;
 }
 
 .logo {
   flex-wrap: inherit;
+  width: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: fit-content;
+
 }
 
 .logo a {
@@ -56,19 +104,20 @@ body:not(.dark) #sun {
   word-break: keep-all;
   overflow-x: auto;
   white-space: nowrap;
+  
 }
 
 #menu li + li {
-  margin-inline-start: var(--gap);
 }
 
 #menu a {
   font-size: 16px;
+  margin-right: 14px;
 }
 
 #menu .active {
   font-weight: 500;
-  border-bottom: 2px solid currentColor;
+  /* border-bottom: 2px solid currentColor; */
 }
 
 .lang-switch li,

@@ -1,8 +1,12 @@
 {{- partial "theme-switch.html" . -}}
 <header class="site-header">
-    <nav class="nav">
-      {{- partial "logo.html" . -}}
+  <input type="checkbox" class="nav-toggle" id="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+  {{- partial "logo.html" . -}}
  {{ partial "search.html" . }}
+    <nav class="nav">
         {{- $currentPage := . }}
         <ul id="menu">
             {{- range .Site.Menus.main }}

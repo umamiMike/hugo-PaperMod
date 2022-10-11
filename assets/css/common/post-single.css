@@ -124,8 +124,8 @@ h6 {
   margin-bottom: var(--gap);
 }
 
-.post-content dt {
-  font-weight: 500;
+dt {
+  font-weight: bold;
   color: var(--primary);
 }
 
@@ -247,6 +247,7 @@ dt::after {
 /*   max-width: 100%; */
 /* } */
 .post-content img {
+  max-width: 80%;
 }
 
 .post-content img[src*="#center"] {
