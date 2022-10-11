@@ -52,7 +52,6 @@
 
 .post-content {
   color: var(--content);
-  width: 85%;
   margin-left: auto;
   margin-right: auto;
   flex-grow: 4;
@@ -248,9 +247,6 @@ dt::after {
 /*   max-width: 100%; */
 /* } */
 .post-content img {
-  border-radius: 2px;
-  border: solid var(--tertiary) 1px;
-  padding: 1em;
 }
 
 .post-content img[src*="#center"] {

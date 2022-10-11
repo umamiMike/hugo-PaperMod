@@ -148,12 +148,32 @@ pre:hover .copy-code {
 
 .mermaid-container {
   background-color: rgb(224, 225, 224);
+  display: block;
   width: 100%;
   height: 80vh;
   overflow: clip;
 }
+
+ label {
+position: static;
+display: block;
+margin: 8px;
+}
+label img {
+z-index: 1000;
+width:40px;
+
+
+}
+.fullscreen {
+z-index: 1000;
+}
 .nodeLabel {
 max-width: 200px;
+}
+
+.fullscreenToggle {
+display: none;
 }
 
 .svg-container {
