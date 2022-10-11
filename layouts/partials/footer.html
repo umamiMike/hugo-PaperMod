@@ -169,8 +169,11 @@ let svgPanZoomConfig = {
     center: true,
     minZoom: 0.1
   };
-foo = document.querySelectorAll(`svg`);
-foo.forEach( svgInstance =>  svgPanZoom(svgInstance,svgPanZoomConfig));
+
+
+let charts = document.querySelectorAll(`.mermaid`);
+
+      charts.forEach( el => panzoom(el) )
 }
 
 </script>
