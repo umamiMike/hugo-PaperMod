@@ -14,6 +14,7 @@ display: none;
   position: sticky;
   min-height: 24px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -22,8 +23,7 @@ display: none;
 }
 
 .nav-toggle-label{
-position: absolute;
-right: 0;
+/* position: absolute; */
 height: 100%;
 display: flex;
 align-items: center;
@@ -40,6 +40,7 @@ border-radius: 2px;
 position: relative;
 }
 
+/* for the bars */
 .nav-toggle-label span::after,
 .nav-toggle-label span::before {
   content: '';
