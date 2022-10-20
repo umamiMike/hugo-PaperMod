@@ -1,4 +1,4 @@
-nhis is a Fork of [adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
+This is a Fork of [adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
 
 It has mostly been for my own experimentation, so many things are in a WIP
 state. I welcome feedback. You can demo it
