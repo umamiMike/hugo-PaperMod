@@ -4,10 +4,6 @@
     display: initial;
   }
 
-  #fastSearch,
-  .post-header {
-    /* visibility: hidden; */
-  }
 
   .list-tags li {
     font-size: 0.8em;
@@ -46,10 +42,6 @@
   }
   summary {
     list-style: none;
-  }
-  .post-content img {
-    /* width: 50%; */
-    /* page-break-inside: avoid; */
   }
 
 

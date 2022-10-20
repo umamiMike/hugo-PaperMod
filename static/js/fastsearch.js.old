@@ -1,50 +1,39 @@
 var fuse; // holds our search engine
-var searchVisible = false;
+var searchVisible = true;
 var firstRun = true; // allow us to delay loading json data unless search activated
 var list = document.getElementById("searchResults"); // targets the <ul>
 var first = list.firstChild; // first child of search list
 var last = list.lastChild; // last child of search list
 var maininput = document.getElementById("searchInput"); // input box for search
 var resultsAvailable = false; // Did we get any search results?
-console.log("assets js fastsearch 9");
 
 // ==========================================
 // The main keyboard event listener running the show
 //
 document.addEventListener("keydown", function (event) {
+  loadSearch(); // loads our json data and builds fuse.js search index
+  firstRun = false; // let's never do this again
   // CMD-/ to show / hide Search
-  if (event.metaKey && event.which === 191) {
+  if (event.which == 191) {
     // Load json search index if first time invoking search
     // Means we don't load json unless searches are going to happen; keep user payload small unless needed
     if (firstRun) {
-      loadSearch(); // loads our json data and builds fuse.js search index
-      firstRun = false; // let's never do this again
     }
+  }
 
-    // // Toggle visibility of search box
-    // if (!searchVisible) {
-    //   document.getElementById("fastSearch").style.visibility = "visible"; // show search box
-    //   document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
-    //   searchVisible = true; // search visible
-    // } else {
-    //   // document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
-    //   document.activeElement.blur(); // remove focus from search box
-    //   // searchVisible = false; // search not visible
-    // }
-  // }
-
-  // // Allow ESC (27) to close search box
-  // if (event.keyCode == 27) {
-  //   if (searchVisible) {
-  //     // document.getElementById("fastSearch").style.visibility = "hidden";
-  //     document.activeElement.blur();
-  //     // searchVisible = false;
-  //   }
-  // }
+  // Allow ESC (27) to close search box
+  if (event.keyCode == 27) {
+    if (searchVisible) {
+      document.getElementById("fastSearch").style.visibility = "hidden";
+      document.activeElement.blur();
+      searchVisible = false;
+    }
+  }
 
   // DOWN (40) arrow
   if (event.keyCode == 40) {
     if (searchVisible && resultsAvailable) {
+      console.log("down");
       event.preventDefault(); // stop window from scrolling
       if (document.activeElement == maininput) {
         first.focus();
@@ -112,7 +101,7 @@ function loadSearch() {
       distance: 100,
       threshold: 0.4,
       minMatchCharLength: 2,
-      keys: ["title", "permalink", "summary"],
+      keys: ["title", "permalink", "summary", "tags"],
     };
     fuse = new Fuse(data, options); // build the index from the json file
   });
@@ -125,35 +114,22 @@ function loadSearch() {
 //
 function executeSearch(term) {
   let results = fuse.search(term); // the actual query being run using fuse.js
-  let searchitems = ""; // our results bucket
+  console.log("results in fastsearch 117");
+  console.log(results);
 
-  if (results.length === 0) {
-    // no results based on what was typed into the input box
-    resultsAvailable = false;
-    searchitems = "";
-  } else {
-    // build our html
-    for (let item in results.slice(0, 5)) {
-      // only show first 5 results
-      searchitems =
-        searchitems +
-        '<li><a href="' +
-        results[item].permalink +
-        '" tabindex="0">' +
-        '<span class="title">' +
-        results[item].title +
-        '</span><br /> <span class="sc">' +
-        results[item].section +
-        "</span> — " +
-        results[item].date +
-        " — <em>" +
-        results[item].desc +
-        "</em></a></li>";
-    }
-    resultsAvailable = true;
-  }
+  const limitedResults = results.slice(0, 100);
+  const searchitems = limitedResults
+    .filter((ob) => ob.item.title)
+    .map((ob) => {
+      let item = ob.item;
+      console.log("in execute search about to return a list of links");
+      return `<li><a href="${item.permalink}" tabindex="0">${item.title}</a></li>`;
+    });
 
-  document.getElementById("searchResults").innerHTML = searchitems;
+  console.log(searchitems);
+  const joinedsearchitems = searchitems.join("");
+  document.getElementById("searchResults").innerHTML = joinedsearchitems;
+
   if (results.length > 0) {
     first = list.firstChild.firstElementChild; // first result container — used for checking against keyboard up/down location
     last = list.lastChild.firstElementChild; // last result container — used for checking against keyboard up/down location

@@ -1,4 +1,9 @@
 
+.nav {
+display: none;
+}
+
+
 .site-header {
   position: sticky;
   top: 0;
@@ -8,6 +13,8 @@
   top: 0;
   position: sticky;
   min-height: 24px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-toggle {
@@ -21,6 +28,10 @@ border: 1px solid red;
 height: 100%;
 display: flex;
 align-items: center;
+height: 100%;
+display: flex;
+align-items: center;
+margin-right: 8px;
 }
 .nav-toggle-label span,
 .nav-toggle-label span::after,
@@ -40,10 +51,10 @@ position: relative;
 }
 
 .nav-toggle-label span::after {
-  top: 7px;
+  top: 5px;
 }
 .nav-toggle-label span::before {
-  bottom: 7px;
+  bottom: 5px;
 }
 
 .nav-toggle:checked ~ .nav {
@@ -112,14 +123,15 @@ body:not(.dark) #sun {
   word-break: keep-all;
   overflow-x: auto;
   white-space: nowrap;
+  
 }
 
 #menu li + li {
-  margin-inline-start: var(--gap);
 }
 
 #menu a {
   font-size: 16px;
+  margin-right: 14px;
 }
 
 #menu .active {

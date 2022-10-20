@@ -1,8 +1,8 @@
 #fastSearch {
   border: 1px solid green;
   width: fit-content;
-  display: inline-block;
-  display: flex;
+  width: fit-content;
+  display: inline-flex;
 }
 #fastSearch svg {
   display: inline-block;

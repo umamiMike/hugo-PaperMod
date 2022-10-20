@@ -52,7 +52,6 @@
 
 .post-content {
   color: var(--content);
-  width: 85%;
   margin-left: auto;
   margin-right: auto;
   flex-grow: 4;
@@ -125,8 +124,8 @@ h6 {
   margin-bottom: var(--gap);
 }
 
-.post-content dt {
-  font-weight: 500;
+dt {
+  font-weight: bold;
   color: var(--primary);
 }
 
