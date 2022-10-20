@@ -22,16 +22,13 @@ display: none;
 }
 
 .nav-toggle-label{
+align-items: center;
+border: 1px solid red;
+display: flex;
+height: 100%;
+margin-right: 8px;
 position: absolute;
 right: 0;
-border: 1px solid red;
-height: 100%;
-display: flex;
-align-items: center;
-height: 100%;
-display: flex;
-align-items: center;
-margin-right: 8px;
 }
 .nav-toggle-label span,
 .nav-toggle-label span::after,
@@ -72,8 +69,6 @@ display: none;
   width: fit-content;
 }
 
-
-
 .nav a {
   display: block;
 }
@@ -83,7 +78,6 @@ display: none;
 }
 
 .logo {
-  border: 1px solid red;
   flex-wrap: inherit;
   width: auto;
   display: inline-flex;
@@ -126,8 +120,6 @@ body:not(.dark) #sun {
   
 }
 
-#menu li + li {
-}
 
 #menu a {
   font-size: 16px;

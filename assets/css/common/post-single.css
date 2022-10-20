@@ -249,8 +249,8 @@ dt::after {
 .post-content img {
   border-radius: 2px;
   border: solid var(--tertiary) 1px;
-  padding: 1em;
   max-width: 80%;
+  padding: 1em;
 }
 
 .post-content img[src*="#center"] {
