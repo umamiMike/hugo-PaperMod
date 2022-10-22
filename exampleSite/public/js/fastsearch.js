@@ -23,14 +23,14 @@ document.addEventListener('keydown', function(event) {
 
   }
 
-  // Allow ESC (27) to close search box
-  if (event.keyCode == 27) {
-    if (searchVisible) {
-      document.getElementById("fastSearch").style.visibility = "hidden";
-      document.activeElement.blur();
-      searchVisible = false;
-    }
-  }
+  // // Allow ESC (27) to close search box
+  // if (event.keyCode == 27) {
+  //   if (searchVisible) {
+  //     document.getElementById("fastSearch").style.visibility = "hidden";
+  //     document.activeElement.blur();
+  //     searchVisible = false;
+  //   }
+  // }
 
   // DOWN (40) arrow
   if (event.keyCode == 40) {
