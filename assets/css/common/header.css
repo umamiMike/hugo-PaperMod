@@ -60,11 +60,9 @@ position: relative;
 
 }
 .nav {
-  border: 1px solid blue;
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* line-height: var(--header-height); */
 display: none;
   width: fit-content;
 }
