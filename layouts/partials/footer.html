@@ -1,5 +1,5 @@
 {{- if not (.Param "hideFooter") }}
-<input type="checkbox" name="toggleFullscreen" id="toggleFullscreen"></input>
+<!-- <input type="checkbox" name="toggleFullscreen" id="toggleFullscreen"></input> -->
 <footer class="footer">
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
@@ -11,8 +11,7 @@
     {{- end }}
     <span>
         Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a>
     </span>
 </footer>
 {{- end }}
