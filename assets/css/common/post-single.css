@@ -472,7 +472,7 @@ h6:hover .anchor {
 }
 .block p,h1,h2,h3,h4 {
 text-align: left;
-margin-bottom: .1em;
+/* margin-bottom: .1em; */
 }
 
 
