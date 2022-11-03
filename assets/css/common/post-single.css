@@ -274,19 +274,24 @@ dt::after {
   font-weight: normal;
 }
 .post-content details {
-  margin-left: 1em;
+  /* margin-left: 1em; */
   margin-top: 1em;
   margin-bottom: 1em;
   /* background-color: var(--entry); */
 }
+.detail-content {
+
+  margin-left: 1em;
+
+}
 
 .post-content details summary {
-  font-size: 1.3rem;
-  font-weight: bold;
-  background-color: var(--tertiary);
+  font-size: 1.1rem;
+  /* font-weight: bold; */
+  background-color: var(--dd-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: calc(var(--gap) * 0.5);
+  /* padding: calc(var(--gap) * 0.5); */
   margin-bottom: 2px;
 }
 
