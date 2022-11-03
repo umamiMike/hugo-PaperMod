@@ -3,10 +3,13 @@
 {{- partial "index_profile.html" . }}
   {{ partial "page_header.html" . }}
   {{- partial "section_content.html" . }}
+{{- end }}
 
+<div class="index-content">
+  {{ .Content | markdownify }}
+</div>
 <div class="content">
 
-{{- end }}
 {{- $pages := .RegularPages.ByTitle }}
 
 {{- $paginator := .Paginate $pages }}

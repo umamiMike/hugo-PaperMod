@@ -11,6 +11,12 @@ width: 40%;
 /* margin-left: 25%; */
 }
 
+.index-content a {
+
+
+color: var(--link);
+}
+
 /* Content */
 .main {
   width: 80%;

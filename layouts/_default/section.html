@@ -4,16 +4,19 @@
 {{- partial "index_profile.html" . }}
   {{ partial "page_header.html" . }}
   {{- partial "section_content.html" . }}
+{{- end }}
 
 <div class="content">
 
-{{- end }}
 {{- $pages := .RegularPages.ByDate.Reverse }}
 
 {{- $paginator := .Paginate $pages }}
   {{ if .Sections }}
   {{ partial "section_menu.html" . }}
   {{- end }}
+<div class="index-content">
+  {{ .Content | markdownify }}
+</div>
   <div class="posts">
 
 {{- $term := .Data.Term }}
