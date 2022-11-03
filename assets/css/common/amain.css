@@ -138,6 +138,7 @@ pre:hover .copy-code {
 }
 
 .mermaid-container {
+margin-top: 1em;
   background-color: rgb(224, 225, 224);
   display: block;
   max-width: 100%;
@@ -145,8 +146,6 @@ pre:hover .copy-code {
   overflow: clip;
 }
 
- label {
-}
 
 label img {
 z-index: 1000;

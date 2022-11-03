@@ -35,7 +35,7 @@ right: 0;
 .nav-toggle-label span::after,
 .nav-toggle-label span::before {
 display: block;
-background: black;
+background: var(--content);
 height: 2px;
 width: 1em;
 border-radius: 2px;
@@ -70,7 +70,7 @@ display: none;
 }
 
 .nav a {
-  display: block;
+  /* display: block; */
 }
 
 #menu {

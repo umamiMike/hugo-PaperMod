@@ -38,6 +38,7 @@
 
 .nav {
   display: inline-flex;
+  margin-left: auto;
 }
 
 }

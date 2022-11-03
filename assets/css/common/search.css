@@ -1,6 +1,7 @@
 #fastSearch {
-  display: inline-flex;
+  /* display: inline-flex; */
   width: fit-content;
+  margin-right: auto;
 }
 #fastSearch svg {
   display: inline-block;
