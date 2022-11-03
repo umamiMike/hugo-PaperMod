@@ -20,6 +20,12 @@
 
   }
 
+.post-entry {
+
+  width: 40%;
+
+}
+
   .profile img {
     display: inline-table;
     border-radius: 50%;
@@ -47,6 +53,12 @@
     gap: 4rem;    
     flex-direction:row;
   }
+
+.post-entry {
+
+  width: 30%;
+
+}
 }
 
 /* // Large devices (desktops, 992px and up) */
@@ -62,7 +74,6 @@
   :root {
     --gap: 14px;
   }
-
   /* post-entry */
   .first-entry {
     min-height: 260px;

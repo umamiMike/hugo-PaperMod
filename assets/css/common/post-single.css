@@ -1,5 +1,5 @@
 .post-single {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
@@ -140,6 +140,8 @@ dt::after {
 
 .post-content table {
   margin-bottom: 32px;
+  /* display: contents; */
+  display: table;
 }
 
 .post-content table th,
@@ -182,7 +184,6 @@ dt::after {
 }
 
 .post-content .highlight pre {
-  margin: 0;
 }
 
 .post-content .highlighttable {
@@ -209,26 +210,25 @@ dt::after {
 .post-content .highlight span {
   background: 0 0 !important;
 }
-
-.post-content code {
-  margin: auto 4px;
-  padding: 4px 6px;
-  font-size: 0.78em;
-  line-height: 1.5;
-  background: var(--code-bg);
-  border-radius: 2px;
-}
-
-.post-content pre code {
-  display: block;
+.post-content pre  {
+  /* display: block; */
   margin: auto 0;
   padding: 10px;
-  color: rgb(213, 213, 214);
-  background: 0 0;
+  /* color: rgb(213, 213, 214); */
   border-radius: 0;
   overflow-x: auto;
   word-break: break-all;
+  /* background: var(--code-bg); */
 }
+
+.post-content code {
+  margin:  4px;
+  padding: 4px 6px;
+  font-size: 0.78em;
+  line-height: 1.5;
+  /* border-radius: 2px; */
+}
+
 
 .post-content blockquote {
   margin: 20px 0;
@@ -248,9 +248,9 @@ dt::after {
 /* } */
 .post-content img {
   border-radius: 2px;
-  border: solid var(--tertiary) 1px;
+  /* border: solid var(--tertiary) 1px; */
   max-width: 80%;
-  padding: 1em;
+  /* padding: 1em; */
 }
 
 .post-content img[src*="#center"] {
