@@ -9,9 +9,9 @@
     {{ end }}
     <div class="post-content">
       {{- if not (.Param "disableAnchoredHeadings") }}
-      {{- partial "anchored_headings.html" .Content -}}
+      <!-- {{- partial "anchored_headings.html" .Content -}} -->
+{{- partial "content-wikilinks" . -}}
       {{- else }}
-      {{ .Content }}
       {{ end }}
       <div class="overview">
         {{- if isset .Params "overview" }}

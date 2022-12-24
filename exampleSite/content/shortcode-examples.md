@@ -10,12 +10,16 @@ tags:
   - theme-dev
 title: "Shortcode Examples"
 ---
-
+## wikilinks 
+- [[wikilinks]]
+- [[bar]]
+- [[baz]]
+- [[food]]
+- [[biz]]
+- [[cool|beans]]
+- [[subsection/a]]
 {{< ltr style="foo" >}}
 
-this
-
-that 
 
 another thing
 {{< /ltr >}}
@@ -129,6 +133,4 @@ Image URLs are based on `Site.Params.imagehost ` found in the `config.yml` file 
 ```
 
 {{< blog-image "20220215_121242.jpg" >}}
-
-
 
