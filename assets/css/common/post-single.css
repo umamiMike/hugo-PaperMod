@@ -1,5 +1,5 @@
 .post-single {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
@@ -52,7 +52,6 @@
 
 .post-content {
   color: var(--content);
-  width: 85%;
   margin-left: auto;
   margin-right: auto;
   flex-grow: 4;
@@ -125,8 +124,8 @@ h6 {
   margin-bottom: var(--gap);
 }
 
-.post-content dt {
-  font-weight: 500;
+dt {
+  font-weight: bold;
   color: var(--primary);
 }
 
@@ -141,6 +140,8 @@ dt::after {
 
 .post-content table {
   margin-bottom: 32px;
+  /* display: contents; */
+  display: table;
 }
 
 .post-content table th,
@@ -183,7 +184,6 @@ dt::after {
 }
 
 .post-content .highlight pre {
-  margin: 0;
 }
 
 .post-content .highlighttable {
@@ -210,26 +210,25 @@ dt::after {
 .post-content .highlight span {
   background: 0 0 !important;
 }
-
-.post-content code {
-  margin: auto 4px;
-  padding: 4px 6px;
-  font-size: 0.78em;
-  line-height: 1.5;
-  background: var(--code-bg);
-  border-radius: 2px;
-}
-
-.post-content pre code {
-  display: block;
+.post-content pre  {
+  /* display: block; */
   margin: auto 0;
   padding: 10px;
-  color: rgb(213, 213, 214);
-  background: 0 0;
+  /* color: rgb(213, 213, 214); */
   border-radius: 0;
   overflow-x: auto;
   word-break: break-all;
+  /* background: var(--code-bg); */
 }
+
+.post-content code {
+  margin:  4px;
+  padding: 4px 6px;
+  font-size: 0.78em;
+  line-height: 1.5;
+  /* border-radius: 2px; */
+}
+
 
 .post-content blockquote {
   margin: 20px 0;
@@ -249,9 +248,9 @@ dt::after {
 /* } */
 .post-content img {
   border-radius: 2px;
-  border: solid var(--tertiary) 1px;
-  padding: 1em;
+  /* border: solid var(--tertiary) 1px; */
   max-width: 80%;
+  /* padding: 1em; */
 }
 
 .post-content img[src*="#center"] {
@@ -275,19 +274,24 @@ dt::after {
   font-weight: normal;
 }
 .post-content details {
-  margin-left: 1em;
+  /* margin-left: 1em; */
   margin-top: 1em;
   margin-bottom: 1em;
   /* background-color: var(--entry); */
 }
+.detail-content {
+
+  margin-left: 1em;
+
+}
 
 .post-content details summary {
-  font-size: 1.3rem;
-  font-weight: bold;
-  background-color: var(--tertiary);
+  font-size: 1.1rem;
+  /* font-weight: bold; */
+  background-color: var(--dd-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: calc(var(--gap) * 0.5);
+  /* padding: calc(var(--gap) * 0.5); */
   margin-bottom: 2px;
 }
 
@@ -473,7 +477,7 @@ h6:hover .anchor {
 }
 .block p,h1,h2,h3,h4 {
 text-align: left;
-margin-bottom: .1em;
+/* margin-bottom: .1em; */
 }
 
 

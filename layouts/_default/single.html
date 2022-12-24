@@ -1,5 +1,7 @@
 {{- define "main" }} {{- if (.Param "ShowToc") }} {{- partial "toc.html" . }}
+<!-- {{ partial "cardview.html" }} -->
 {{- end }}
+
 <div class="content">
   <article class="post-single">
     {{- partial "post_header.html" . }}

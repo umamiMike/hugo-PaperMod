@@ -20,13 +20,28 @@
 
   }
 
+.post-entry {
+
+  width: 40%;
+
+}
+
   .profile img {
     display: inline-table;
     border-radius: 50%;
     pointer-events: none;
   }
+
+ .nav-toggle-label {
+   display: none
+ }
+
+.nav {
+  display: inline-flex;
+  margin-left: auto;
 }
 
+}
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .entry-footer {
@@ -39,6 +54,12 @@
     gap: 4rem;    
     flex-direction:row;
   }
+
+.post-entry {
+
+  width: 30%;
+
+}
 }
 
 /* // Large devices (desktops, 992px and up) */
@@ -54,7 +75,6 @@
   :root {
     --gap: 14px;
   }
-
   /* post-entry */
   .first-entry {
     min-height: 260px;

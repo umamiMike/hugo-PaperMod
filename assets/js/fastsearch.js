@@ -21,31 +21,30 @@ document.addEventListener("keydown", function (event) {
       firstRun = false; // let's never do this again
     }
 
-    // Toggle visibility of search box
-    if (!searchVisible) {
-      document.getElementById("fastSearch").style.visibility = "visible"; // show search box
-      document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
-      searchVisible = true; // search visible
-    } else {
-      document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
-      document.activeElement.blur(); // remove focus from search box
-      searchVisible = false; // search not visible
-    }
-  }
+    // // Toggle visibility of search box
+    // if (!searchVisible) {
+    //   document.getElementById("fastSearch").style.visibility = "visible"; // show search box
+    //   document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
+    //   searchVisible = true; // search visible
+    // } else {
+    //   // document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
+    //   document.activeElement.blur(); // remove focus from search box
+    //   // searchVisible = false; // search not visible
+    // }
+  // }
 
-  // Allow ESC (27) to close search box
-  if (event.keyCode == 27) {
-    if (searchVisible) {
-      document.getElementById("fastSearch").style.visibility = "hidden";
-      document.activeElement.blur();
-      searchVisible = false;
-    }
-  }
+  // // Allow ESC (27) to close search box
+  // if (event.keyCode == 27) {
+  //   if (searchVisible) {
+  //     // document.getElementById("fastSearch").style.visibility = "hidden";
+  //     document.activeElement.blur();
+  //     // searchVisible = false;
+  //   }
+  // }
 
   // DOWN (40) arrow
   if (event.keyCode == 40) {
     if (searchVisible && resultsAvailable) {
-      console.log("down");
       event.preventDefault(); // stop window from scrolling
       if (document.activeElement == maininput) {
         first.focus();

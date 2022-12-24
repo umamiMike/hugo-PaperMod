@@ -1,0 +1,30 @@
+<script>
+  const setDraggedOver = (e) => {
+  e.preventDefault();
+  draggedOver = Number.isNaN(parseInt(e.target.innerText)) ? e.target.innerText : parseInt(e.target.innerText)
+}
+
+const setDragging = (e) =>{
+  dragging = Number.isNaN(parseInt(e.target.innerText)) ? e.target.innerText : parseInt(e.target.innerText)
+}
+    const compare = (e) =>{
+        console.log("comparing")
+};
+    let uls  = document.querySelectorAll("ul").forEach((ul) => {ul.droppable({
+        activeClass: "ui-state-hover",
+        hoverClass: "ui-state-active",
+        accept: ":not(.ui-sortable-helper)",
+        drop: function( event, ui ) {
+            var targetElem = $(this).attr("id");
+            $( ui.draggable ).clone().appendTo( this );
+        }
+      }).sortable({})``
+
+    let lists  = document.querySelectorAll("li").forEach((n) => {
+        n.addEventListener('drag', setDragging)
+        n.addEventListener('dragover', setDraggedOver)
+         n.addEventListener('drop', compare)
+          n.draggable = true
+        console.log(n)
+      })
+</script>

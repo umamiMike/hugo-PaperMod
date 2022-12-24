@@ -1,4 +1,9 @@
 
+.nav {
+display: none;
+}
+
+
 .site-header {
   position: sticky;
   top: 0;
@@ -8,6 +13,9 @@
   top: 0;
   position: sticky;
   min-height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .nav-toggle {
@@ -15,24 +23,26 @@ display: none;
 }
 
 .nav-toggle-label{
+align-items: center;
+display: flex;
+height: 100%;
+margin-right: 8px;
 position: absolute;
 right: 0;
-border: 1px solid red;
-height: 100%;
-display: flex;
-align-items: center;
 }
+
 .nav-toggle-label span,
 .nav-toggle-label span::after,
 .nav-toggle-label span::before {
 display: block;
-background: black;
+background: var(--content);
 height: 2px;
 width: 1em;
 border-radius: 2px;
 position: relative;
 }
 
+/* for the bars */
 .nav-toggle-label span::after,
 .nav-toggle-label span::before {
   content: '';
@@ -40,10 +50,10 @@ position: relative;
 }
 
 .nav-toggle-label span::after {
-  top: 7px;
+  top: 5px;
 }
 .nav-toggle-label span::before {
-  bottom: 7px;
+  bottom: 5px;
 }
 
 .nav-toggle:checked ~ .nav {
@@ -52,19 +62,15 @@ position: relative;
 
 }
 .nav {
-  border: 1px solid blue;
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* line-height: var(--header-height); */
 display: none;
   width: fit-content;
 }
 
-
-
 .nav a {
-  display: block;
+  /* display: block; */
 }
 
 #menu {
@@ -72,7 +78,6 @@ display: none;
 }
 
 .logo {
-  border: 1px solid red;
   flex-wrap: inherit;
   width: auto;
   display: inline-flex;
@@ -112,14 +117,13 @@ body:not(.dark) #sun {
   word-break: keep-all;
   overflow-x: auto;
   white-space: nowrap;
+  
 }
 
-#menu li + li {
-  margin-inline-start: var(--gap);
-}
 
 #menu a {
   font-size: 16px;
+  margin-right: 14px;
 }
 
 #menu .active {
