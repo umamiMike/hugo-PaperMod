@@ -6,7 +6,6 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  */
-console.log("static/js/fuse.js:9");
 var e, t;
 (e = this),
   (t = function () {
@@ -1013,4 +1012,3 @@ var e, t;
     : "function" == typeof define && define.amd
     ? define(t)
     : ((e = e || self).Fuse = t());
-

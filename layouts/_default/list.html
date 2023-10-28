@@ -1,23 +1,22 @@
 {{- define "main" }}
 {{- if (and .Site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
-{{- else }} {{/* if not profileMode */}}
-
-<div class="content">
   {{ partial "page_header.html" . }}
   {{- partial "section_content.html" . }}
-
 {{- end }}
-{{- $pages := .RegularPages }}
+
+<div class="index-content">
+  {{ .Content | markdownify }}
+</div>
+<div class="content">
+
+{{- $pages := .RegularPages.ByTitle }}
 
 {{- $paginator := .Paginate $pages }}
-  {{- if and .IsHome .Site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
-  {{- partial "home_info.html" . }}
-  {{- end }}
   {{ if .Sections }}
   {{- end }}
-  {{ partial "section_menu.html" . }}
   <div class="posts">
+
 {{- $term := .Data.Term }}
 
 {{- range $index, $page := $paginator.Pages }}
@@ -25,7 +24,6 @@
 {{- $class := "post-entry" }}
 
 {{- $user_preferred := or .Site.Params.disableSpecial1stPost .Site.Params.homeInfoParams }}
-
 {{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
 {{- $class = "first-entry" }}
 {{- else if $term }}
@@ -36,44 +34,35 @@
 {{- $class = printf "%s %s" $class "section" }}
 {{- end }}
 
-<article class="{{ $class }}">
+<article class="{{ $class }}" id="{{ .Title | safeCSS }}">
+  <div class="entry-body">
 
+  {{ with .Params.featured_image }}
+  <img src="/{{ . }}" class="list-featured-image" alt="">
+  {{ end }}
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
-  <header class="entry-header">
 
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
-    <h2>
-      {{- if  .Title }} {{- .Title }}
+  <a class="entry-title" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
+      {{- if  .Title }}
+      {{- .Title }}
       {{- else }} {{.File.TranslationBaseName}} {{- end }}
-    {{- if .Draft }}   ◒{{- end }}
-    </h2>
+      {{- if .Draft }}  <sup>◒</sup> {{- end }}
   </a>
-  </header>
-  {{- if (ne (.Param "hideSummary") true) }}
   <div class="description">
  <p>{{ .Description  }}</p>
 
   </div>
-  <section class="entry-content">
 
-    {{- if .Params.tags }}
+  </div>
+    {{- with .Params.tags }}
     <ul class="list-tags">
-      {{- range .Params.tags }}
-      <li>
-  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
-                
-      </li>
+      {{- range . }}
+      <li> <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a> </li>
       {{- end }}
     </ul>
     {{- end }}
-  </section>
-  {{- end }}
-  {{- if not (.Param "hideMeta") }}
-  <footer class="entry-footer">
-    {{- partial "post_meta.html" . -}}
-  </footer>
-  {{- end }}
+
 </article>
 {{- end }}
   </div>

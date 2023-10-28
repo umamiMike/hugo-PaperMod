@@ -9,20 +9,36 @@
     {{- end }}
 </header>
 {{- end }}
-
 <ul class="terms-tags">
     {{- $type := .Type }}
-    {{- range $key, $value := .Data.Terms.ByCount }}
-    {{- if (ge .Count 2 ) }}
-    {{- $name := .Name }}
-    {{- $count := .Count }}
 
-    {{- with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-    <li>
-        <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
-    </li>
-    {{- end }}
-    {{- end }}
+    {{- range $key, $value := .Data.Terms.ByCount }}
+      {{- if $.Site.Params.profileMode.enabled }}
+        {{- if (ge .Count 2 ) }}
+        {{- $name := .Name }}
+        {{- $count := .Count }}
+
+          {{- with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+
+          <li>
+              <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+          </li>
+
+          {{- end }}
+        {{- end }}
+        {{- else }}
+        {{- $name := .Name }}
+        {{- $count := .Count }}
+
+          {{- with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+
+          <li>
+              <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+          </li>
+
+        {{- end }}
+
+      {{- end }}
     {{- end }}
 </ul>
 

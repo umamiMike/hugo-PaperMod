@@ -4,8 +4,8 @@
   {{ $filtered := $sexion | intersect $notoverview }}
   {{ range after 1 ( where .CurrentSection.Pages.ByTitle ".IsSection" false ) }}
 
-<details class="overview">
+<details class="overview" open>
   <summary class="bold">{{ .Title }}</summary>
-  <article class="">{{ .Summary }}</article>
+  <article class="">{{ .Content }}</article>
 </details>
 {{ end }}

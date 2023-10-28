@@ -1,2 +1,22 @@
+{{ $thisID := now.UnixNano }}
+
+<div class="mermaid-container mermaid{{ $thisID }}" >
+  <input type="checkbox" id="check{{ $thisID }}" name="check{{ $thisID }}" class="fullscreenToggle check{{ $thisID }} toggleFullscreen"  >
+  <label class="mermaid-fs" for="check{{ $thisID }}" class="label label{{ $thisID }}">
+<img  src="/toggle-fullscreen.png" alt=""/>
+
+  </label>
 <div class="mermaid">{{- .Inner | safeHTML }}</div>
 {{ .Page.Store.Set "hasMermaid" true }}
+</div>
+<script>
+  checkbox = document.querySelector(".check{{ $thisID }}");
+checkbox.addEventListener('change', function() {
+  if (this.checked) {
+      let elem = document.querySelector(".mermaid{{ $thisID }}");
+      toggleFullscreen(elem)
+  } else {
+   document.exitFullscreen();
+  }
+});
+</script>

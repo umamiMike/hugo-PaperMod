@@ -1,4 +1,6 @@
-
+  {{- if and .IsHome .Site.Params.homeInfoParams  }}
+  {{- partial "home_info.html" . }}
+  {{- end }}
   {{- if not .IsHome | and .Title }}
   <header class="page-header">
     {{- partial "breadcrumbs.html" . }}

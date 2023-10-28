@@ -6,6 +6,8 @@
                 <img src="{{- .Site.Params.label.icon -}}" aria-label="logo"
                     height="{{- .Site.Params.label.iconHeight | default " 30px" -}}">
                 {{- end -}}
+            </a>
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
                 {{- $label_text -}}
             </a>
             {{- end }}

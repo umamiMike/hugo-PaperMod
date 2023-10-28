@@ -1,5 +1,9 @@
 {{- if not (.Param "hideFooter") }}
+<!-- <input type="checkbox" name="toggleFullscreen" id="toggleFullscreen"></input> -->
 <footer class="footer">
+    {{- if (.Param "ShowPostNavLinks") }}
+    {{- partial "post_nav_links.html" . }}
+    {{- end }}
     {{- if .Site.Copyright }}
     <span>{{ .Site.Copyright | markdownify }}</span>
     {{- else }}
@@ -7,8 +11,7 @@
     {{- end }}
     <span>
         Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a>
     </span>
 </footer>
 {{- end }}
@@ -136,6 +139,15 @@
         }
     });
 
+ function toggleFullscreen(elem) {
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
 
 
 window.onload = function() {
@@ -166,9 +178,12 @@ let svgPanZoomConfig = {
     center: true,
     minZoom: 0.1
   };
-foo = document.querySelectorAll(`svg`);
-foo.forEach( svgInstance =>  svgPanZoom(svgInstance,svgPanZoomConfig));
-}
 
+
+let charts = document.querySelectorAll(`.mermaid`);
+      charts.forEach( (el) => {
+panzoom(el)
+        }  )
+}
 </script>
 {{- end }}

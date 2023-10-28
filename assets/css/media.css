@@ -1,0 +1,124 @@
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .post-entry .description {
+    display: initial;
+  }
+
+  .list-tags {
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 50%;
+  }
+  .entry-body {
+    display: block;
+    margin-bottom: 20px;
+
+  }
+
+.post-entry {
+
+  width: 40%;
+
+}
+
+  .profile img {
+    display: inline-table;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+ .nav-toggle-label {
+   display: none
+ }
+
+.nav {
+  display: inline-flex;
+  margin-left: auto;
+}
+
+}
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .entry-footer {
+    display: flex;
+  }
+
+  .profile {
+
+    margin-top: 100px;
+    gap: 4rem;    
+    flex-direction:row;
+  }
+
+.post-entry {
+
+  width: 30%;
+
+}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+@media screen and (max-width: 768px) {
+  /* theme-vars */
+  :root {
+    --gap: 14px;
+  }
+  /* post-entry */
+  .first-entry {
+    min-height: 260px;
+  }
+
+  /* archive */
+  .archive-month {
+    flex-direction: column;
+  }
+
+  .archive-year {
+    margin-top: 20px;
+  }
+
+  /* footer */
+  .footer {
+    padding: calc((var(--footer-height) - var(--gap) - 10px) / 2) var(--gap);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* reset */
+  ::-webkit-scrollbar {
+    width: 19px;
+    height: 11px;
+  }
+}
+
+/* footer */
+@media screen and (max-width: 900px) {
+  .list .top-link {
+    transform: translateY(-5rem);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  /* terms; profile-mode; post-single; post-entry; post-entry; search; search */
+  .terms-tags a:active,
+  .button:active,
+  .share-buttons svg:active,
+  .post-entry:active,
+  .top-link,
+  #searchResults .focus,
+  #searchResults li:active {
+    transform: none;
+  }
+}

@@ -36,8 +36,7 @@
                         {{- $cleanedID := replace (replace $id "id=\"" "") "\"" "" }}
                         {{- $header := replaceRE "<h[1-6].*?>((.|\n])+?)</h[1-6]>" "$1" $header -}}
 
-                        {{- if ne $i 0 -}}
-                        {{- $prevHeaderLevel := index (findRE "[1-6]" (index $headers (sub $i 1)) 1) 0 -}}
+                        {{- if ne $i 0 -}} {{- $prevHeaderLevel := index (findRE "[1-6]" (index $headers (sub $i 1)) 1) 0 -}}
                         {{- $prevHeaderLevel := len (seq $prevHeaderLevel) -}}
                         {{- if gt $headerLevel $prevHeaderLevel -}}
                         {{- range seq $prevHeaderLevel (sub $headerLevel 1) -}}

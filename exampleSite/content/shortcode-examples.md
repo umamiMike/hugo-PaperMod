@@ -10,10 +10,25 @@ tags:
   - theme-dev
 title: "Shortcode Examples"
 ---
+## wikilinks 
+- [[wikilinks]]
+- [[bar]]
+- [[baz]]
+- [[food]]
+- [[biz]]
+- [[cool|beans]]
+- [[subsection/a]]
+{{< ltr style="foo" >}}
+
+
+another thing
+{{< /ltr >}}
 
 ## testing footnotes
 
 This is a footnote yo[^1]
+
+[^1]: and this is the corrosponding footnote
 
 # H1
 
@@ -49,7 +64,7 @@ font Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
 
 ## asciinema shortcode
 
-You can record screen captures of your terminal and share them. Oh...and you can copy and paste from the screencapture. It is a great way to share commands with full context.
+You can record screen captures of your terminal and share them.  Oh...and you can copy and paste from the screencapture.  It is a great way to share commands with full context.
 
 {{< asciinema EKcSi8ZXv2Be0Zb7F9pg0nTOy>}}
 
@@ -70,7 +85,7 @@ initial conditions, and numerical methods are generally required.
 
 ## mermaid charts
 
-I added a custom mermaid codeblock
+I added a custom mermaid codeblock 
 
 ```mermaid
 sequenceDiagram
@@ -92,11 +107,13 @@ Put an svg in the static folder and link it with this shortcode
 It will embed the svg in the page with the added ability to pan and zoom.
 
 ```
-    {{</* svg "static/example.svg" */>}}
+    {{</* svg "static/joint-cutting-cheatsheet.svg" */>}}
 ```
 
 
-{{< svg "static/example.svg" >}}
+{{< svg "static/joint-cutting-cheatsheet.svg" >}}
+
+
 
 ## an image from the local site
 
@@ -117,6 +134,3 @@ Image URLs are based on `Site.Params.imagehost ` found in the `config.yml` file 
 
 {{< blog-image "20220215_121242.jpg" >}}
 
-[^1]: and this is the corrosponding footnote written at the bottom of the doc
-
-<!--more-->

@@ -1,4 +1,8 @@
 {{ $file := (.Get "file") }}
 {{ with .Site.GetPage  $file }}
-{{ .Summary }}
+<div class="included">
+{{ .Summary | markdownify }}
+<!-- <a href="{{ .Permalink }}" target="_blank">Read More here</a> -->
+<!-- </div> -->
+{{ else }}
 {{ end }}

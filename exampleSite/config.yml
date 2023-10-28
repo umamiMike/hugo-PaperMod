@@ -1,12 +1,14 @@
-baseURL: "http://192.168.0.34"
-title: "my journal"
+baseURL: "http://dev.heywilding.com"
+title: "projects"
 theme: hugo-PaperMod
-paginate: 20
+paginate: 200
 pygmentsCodeFences: true
 enableInlineShortcodes: true
 canonifyURLs: false
 relativeURLs: true
 pluralizelisttitles: false
+refLinksNotFoundURL: "/"
+refLinksErrorLevel: "INFO"
 
 languages:
   en:
@@ -14,9 +16,6 @@ languages:
     weight: 1
     menu:
       main:
-        - name: Search
-          url: search/
-          weight: 10
         - name: Tags
           url: tags/
           weight: 10
@@ -37,8 +36,9 @@ outputs:
     - JSON
 
 params:
+  imagehost: "https://storage.googleapis.com/mwcw-blog-images"
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+  description: "Theme PaperMod - https://github.com/umamiMike/hugo-PaperMod"
   author: Theme PaperMod
   defaultTheme: auto
   # disableThemeToggle: true
@@ -52,9 +52,9 @@ params:
   ShowToc: true
 
   profileMode:
-    enabled: false
-    title: TechnicalMess
-    imageUrl: "#"
+    enabled: true
+    title: Profile mode title
+    imageUrl: "woman-profile-unsplash.jpg"
     imageTitle: my image
     # imageWidth: 120
     # imageHeight: 120
@@ -65,22 +65,21 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "TechnicalMess"
-    Content: >
-      - TechnicalMess is the home of my technical and tech adjacent research, exploration and expression
+    Title: "Mike Wildings variation on hugoPapermod"
+    Content: home info params content 
   socialIcons:
     - name: github
       url: "https://github.com/umamiMike"
     - name: RsS
       url: "index.xml"
 
-  # label:
-  #   text: "Home"
-  #   icon: /favicon-32x32.png
-  #   iconHeight: 32
+  label:
+    text: "Home"
+    icon: /favicon-32x32.png
+    iconHeight: 32
 
   editPost:
-    URL: "https://github.com/umamiMike/corpus/tree/main"
+    URL: "https://github.com/umamiMike/projects-and-resources/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -93,6 +92,7 @@ enableEmoji: true
 
 minify:
   disableXML: true
+
 
 privacy:
   vimeo:
@@ -111,3 +111,9 @@ privacy:
   youtube:
     disabled: false
     privacyEnhanced: true
+
+taxonomies:
+  foo: foo
+  category: categories
+  tag: tags
+  bar: bar

@@ -2,7 +2,7 @@
 <div class="block">
   {{ range .Params }}
   <div>
-  {{ . }}
+  {{ . | markdownify }}
   </div>
   {{ end }}
 
