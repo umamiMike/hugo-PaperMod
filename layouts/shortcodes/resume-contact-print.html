@@ -1,20 +1,21 @@
-<div class="print-contact">
-  <h1 class="">Michael Wilding</h1>
-  <a href="https://twitter.com/{{ .Site.Params.twitterhandle }}">
-    <span class="float-left"> {{ .Site.Params.twittericon | safeHTML }} </span>
-    <p class="bold">{{ .Site.Params.twitterhandle }}</p>
-  </a>
-  <a href="mailto:{{ .Site.Params.email }}">
-    <span class="float-left"> {{ .Site.Params.emailicon | safeHTML }} </span>
-    heymichaelwilding@gmail.com 
-  </a>
+<style>
+.contact-container {
+}
+.contact {
+display: flex;
+justify-content: space-between;
+font-size: .8em;
+}
 
-  <a href="tel:5039570099">
-    <span class="float-left"> {{ .Site.Params.phoneicon | safeHTML }} </span>
-  <p>503-957-0099</p>
-  </a>
-  <a href="https://github.com/{{ .Site.Params.gituser }}">
-    <span class="float-left"> {{ .Site.Params.ghicon | safeHTML }} </span>
-    <p class="bold">{{ .Site.Params.gituser }}</p>
-  </a>
+
+</style>
+<div class="contact-container">
+  <div class="contact">
+    {{ with .Page.Params.contact }}
+    <div><span class="bold">repos: </span><a href="https://{{ .repos }}">{{ .repos }}</a> </div>
+    <div><span class="bold">email: </span><a href="mailto:{{ .email }}">{{ .email }}</a> </div>
+    <div><span class="bold">site: </span><a href="https://{{ .site }}">{{ .site }}</a> </div>
+    <div><span class="bold">phone: </span>{{ .phone }}</div>
+    {{ end }}
+  </div>
 </div>

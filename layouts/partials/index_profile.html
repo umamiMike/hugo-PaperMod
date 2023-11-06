@@ -1,8 +1,6 @@
 <div class="profile">
     {{- with .Site.Params.profileMode }}
     <div>
-
-      <!-- <h2>{{ .title | default $.Site.Title | markdownify }}</h2> -->
       {{- if .imageUrl -}}
       <img src="{{ .imageUrl }}" alt="{{ .imageTitle | default "profile image" }}"
           height="{{ .imageHeight }}" width="{{ .imageWidth | default 150 }}" />
@@ -14,7 +12,6 @@
         {{ $.Site.Data.about.title | markdownify }}
         <br>
         {{ $.Site.Data.about.description | markdownify }}
-        {{- partial "social_icons.html" $.Site.Params.socialIcons -}}
         {{- with .buttons }}
         <div class="buttons">
             {{- range . }}

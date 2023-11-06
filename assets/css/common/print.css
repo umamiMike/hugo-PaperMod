@@ -92,11 +92,11 @@
     display: none !important;
   }
 
-  .post-content ul,
+ul,
   ol,
   img,
   div, p {
-    page-break-inside: avoid;
+    page-break-inside: never;
   }
 
   .post-content details {

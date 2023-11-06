@@ -1,0 +1,29 @@
+
+<style>
+.educational {
+display: grid;
+/* justify-content: space-between; */
+/* align-content: space-between;
+align: left; */
+grid-template-columns: 1.5fr 3fr 1fr;
+
+}
+.educational .inst {
+    /* width: 200px; */
+    align: left;
+    font-weight: bolder;
+}
+.educational .degree {
+    width: 60%;
+    align-content: space-between;
+}
+
+</style>
+{{ range  .Page.Params.educational }}
+<div class = "educational">
+    <div class="inst">{{ .inst }}</div>
+    <div class="degree">{{ .degree }}</div>
+    <div class="date">{{ .date }}</div>
+</div>
+
+{{ end }}

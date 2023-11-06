@@ -17,6 +17,10 @@ width: 40%;
 color: var(--link);
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* Content */
 .main {
   width: 80%;

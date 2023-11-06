@@ -480,6 +480,10 @@ text-align: left;
 /* margin-bottom: .1em; */
 }
 
+.tableau table {
+
+border: none;
+}
 
 .c-05 {
   margin-left: 1%;
@@ -528,7 +532,4 @@ white-space: nowrap;
 font-size: 2em;
 margin-bottom: 1rem;
 }
-.contact {
 
-/* font-size: .8em; */
-}

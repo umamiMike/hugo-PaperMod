@@ -2,9 +2,13 @@
   /* display: inline-flex; */
   width: fit-content;
   margin-right: auto;
+  position:relative;
 }
 #fastSearch svg {
   display: inline-block;
+  position: absolute;
+  top: 0;
+  right:0;
 }
 
 #fastSearch input {
@@ -12,10 +16,9 @@
   background-color: var(--tertiary);
   border: 1px solid var(--middle);
   text-align: left;
-  /* display: block; */
-  height: 20px;
-  /* width: 80%; */
+  display: block;
   width: auto;
+  padding-left:8px;
 }
 
 #searchResults {
