@@ -297,7 +297,7 @@ dt::after {
 
 .toc {
   position: fixed;
-  display: inline-block;
+  display: none;
   top: 60px;
   right: 0px;
   /* margin-left: 80%; */

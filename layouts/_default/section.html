@@ -57,13 +57,6 @@
   </div>
 
   </div>
-    {{- with .Params.tags }}
-    <ul class="list-tags">
-      {{- range . }}
-      <li> <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a> </li>
-      {{- end }}
-    </ul>
-    {{- end }}
 
 </article>
 {{- end }}

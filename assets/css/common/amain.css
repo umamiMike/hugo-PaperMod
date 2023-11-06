@@ -60,7 +60,7 @@ border: solid 1px var(--tertiary);
 }
 
 .posts {
-  margin-top: var(--gap);
+  margin-top: calc(var(--gap) * 8);
   margin-bottom: var(--gap);
 }
 

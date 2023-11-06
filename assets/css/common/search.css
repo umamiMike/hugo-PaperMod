@@ -26,7 +26,7 @@
 }
 
 .search-container {
-  display: block;
+  display: none;
   background-color: var(--dd-bg);
   position: absolute;
   left: 50%;
@@ -38,20 +38,29 @@
   z-index: 1000;
   overflow-y: scroll;
 }
-
+.display-container:empty {
+  display: none;
+}
 
 #searchResults {
 
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 2px;
+  gap: calc(var(--gap) / 2);
+  padding: calc(var(--gap) * 2);
+  width: 50vw;
 }
+#searchResults:empty {
+  display: none;
+}
+
 
 #searchResults li {
   list-style: none;
   margin-left: 0em;
   background-color: var(--tertiary);
+  padding: calc(var(--gap) * 2);
 }
 #searchResults li .title {
   display: inline-block;

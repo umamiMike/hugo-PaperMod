@@ -102,7 +102,7 @@ function loadSearch() {
       distance: 100,
       threshold: 0.4,
       minMatchCharLength: 2,
-      keys: ["title", "contents"],
+      keys: ["title"],
     };
     fuse = new Fuse(data, options); // build the index from the json file
   });
@@ -117,11 +117,14 @@ function executeSearch(term) {
   let results = fuse.search(term); // the actual query being run using fuse.js
 
   const limitedResults = results.slice(0, 100);
+  const set_of_limited_results = new Set(limitedResults)
+
+  console.log(limitedResults)
+  console.log(set_of_limited_results)
   const searchitems = limitedResults
     .filter((ob) => ob.item.title)
     .map((ob) => {
       let item = ob.item;
-      console.log("in execute search about to return a list of links");
       return `<li><a href="${item.permalink}" tabindex="0">${item.title}</a></li>`;
     });
 
