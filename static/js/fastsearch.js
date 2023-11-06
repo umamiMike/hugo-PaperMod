@@ -69,6 +69,7 @@ document.addEventListener("keydown", function (event) {
 //
 document.getElementById("searchInput").onkeyup = function (e) {
   executeSearch(this.value);
+  showModal()
 };
 
 // ==========================================
@@ -101,7 +102,7 @@ function loadSearch() {
       distance: 100,
       threshold: 0.4,
       minMatchCharLength: 2,
-      keys: ["title", "permalink", "summary", "tags"],
+      keys: ["title", "contents"],
     };
     fuse = new Fuse(data, options); // build the index from the json file
   });
@@ -114,8 +115,6 @@ function loadSearch() {
 //
 function executeSearch(term) {
   let results = fuse.search(term); // the actual query being run using fuse.js
-  console.log("results in fastsearch 117");
-  console.log(results);
 
   const limitedResults = results.slice(0, 100);
   const searchitems = limitedResults
@@ -126,7 +125,6 @@ function executeSearch(term) {
       return `<li><a href="${item.permalink}" tabindex="0">${item.title}</a></li>`;
     });
 
-  console.log(searchitems);
   const joinedsearchitems = searchitems.join("");
   document.getElementById("searchResults").innerHTML = joinedsearchitems;
 

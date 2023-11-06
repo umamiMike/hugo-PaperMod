@@ -12,8 +12,8 @@ display: none;
   z-index: 1000;
   top: 0;
   position: sticky;
-  min-height: 24px;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -79,10 +79,11 @@ display: none;
 
 .logo {
   flex-wrap: inherit;
-  width: auto;
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   width: fit-content;
+  align-items: center;
+  gap:4px;
 
 }
 

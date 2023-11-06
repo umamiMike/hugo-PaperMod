@@ -6,7 +6,6 @@ var first = list.firstChild; // first child of search list
 var last = list.lastChild; // last child of search list
 var maininput = document.getElementById("searchInput"); // input box for search
 var resultsAvailable = false; // Did we get any search results?
-console.log("assets js fastsearch 9");
 
 // ==========================================
 // The main keyboard event listener running the show
@@ -126,7 +125,7 @@ function loadSearch() {
 function executeSearch(term) {
   let results = fuse.search(term); // the actual query being run using fuse.js
   let searchitems = ""; // our results bucket
-
+  console.log("results are")
   if (results.length === 0) {
     // no results based on what was typed into the input box
     resultsAvailable = false;
@@ -134,6 +133,7 @@ function executeSearch(term) {
   } else {
     // build our html
     for (let item in results.slice(0, 5)) {
+      console.log(item)
       // only show first 5 results
       searchitems =
         searchitems +

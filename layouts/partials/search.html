@@ -1,21 +1,44 @@
-<div id="fastSearch">
-  <input id="searchInput" size="20" tabindex="0" />
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="4"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <circle cx="11" cy="11" r="6"></circle>
-    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-  </svg>
-</div>
-<ul id="searchResults"></ul>
-<script src="/js/fuse.js"></script>
-<!-- download and copy over fuse.js file from fusejs.io -->
-<script src="/js/fastsearch.js"></script>
+
+   <div id="fastSearch">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="6"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+   <input id="searchInput" size="20" tabindex="0">
+ </div>
+ <div class="search-container" >
+   <ul id="searchResults">
+   </ul>
+ </div>
+  <script src="/js/fuse.js"></script> <!-- download and copy over fuse.js file from fusejs.io -->
+ <script src="/js/fastsearch.js"></script>
+ <script>
+// Function to show the modal
+function showModal() {
+  var modal = document.querySelector('.search-container');
+  modal.style.display = 'flex';
+}
+
+// Function to hide the modal
+function hideModal() {
+  var modal = document.querySelector('.search-container');
+  modal.style.display = 'none';
+}
+
+
+document.addEventListener
+  var searchBox = document.querySelector('#searchInput');
+
+  searchBox.addEventListener('input', function() {
+    if (searchBox.value === '') {
+      hideModal()
+      return true
+      console.log("i should really close the modal  now")
+      // Perform actions when the search box is empty
+    }
+   showModal()
+  
+  });
+
+ </script>

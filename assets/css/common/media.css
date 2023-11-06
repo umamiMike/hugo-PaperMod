@@ -24,11 +24,6 @@
 
   }
 
-.post-entry {
-
-  width: 40%;
-
-}
 
   .profile img {
     display: inline-table;
@@ -59,11 +54,6 @@
     flex-direction:row;
   }
 
-.post-entry {
-
-  width: 30%;
-
-}
 }
 
 /* // Large devices (desktops, 992px and up) */

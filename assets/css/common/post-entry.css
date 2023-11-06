@@ -81,9 +81,10 @@ margin: 12px;
 }
 .list-featured-image {
 position: absolute;
-width: 100%;
+top:0;
 z-index: -10;
 opacity:0.3;
+object-fit: cover;
 }
 
 .post-entry:hover {

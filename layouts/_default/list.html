@@ -1,9 +1,8 @@
 {{- define "main" }}
 {{- if (and .Site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
-  {{ partial "page_header.html" . }}
-  {{- partial "section_content.html" . }}
-{{- end }}
+{{ partial "page_header.html" . }}
+{{- else }}
 
 <div class="index-content">
   {{ .Content | markdownify }}
@@ -81,5 +80,6 @@
 {{- end }}
 </div>
 
+{{- end }}
 {{- end }}{{/* end profileMode */}}
 
