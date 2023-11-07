@@ -234,3 +234,14 @@ display: none;
 .button:active {
     transform: scale(0.96);
 }
+
+
+
+  .entry-body {
+    display: block;
+    padding: 2em;
+
+  }
+  .entry-body a {
+    font-size: 1.2em;
+  }

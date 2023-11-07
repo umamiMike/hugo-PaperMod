@@ -1,13 +1,31 @@
-  <ul>
-    <!-- if  i am building drafts  show  all regardless --> 
-    <!-- if i am --> 
+<style>
+.blog-posts-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+  .blog-post-item {
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+  }
+
+</style>
    <h2>
    Here are my blog posts
    </h2>
+  <ul class="blog-posts-container">
+
   {{ $format := "Jan 2 2006" }}
-  {{range  (where .Site.RegularPages.ByTitle "Section" "blog")}}
-  <li>
-    <a href="{{ .Permalink }}">{{ .Title }}</a> {{ .Date.Format $format }}
+  {{range  (where .Site.RegularPages.ByDate "Section" "blog").Reverse }}
+  <li class="blog-post-item">
+
+    <a href="{{ .Permalink }}"><p>{{ .Title }}</p> </a>
+    <p>
+    {{ .Date.Format $format }}
+
+    </p>
 
   </li>  
   {{ end }}

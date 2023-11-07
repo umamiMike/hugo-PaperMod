@@ -12,7 +12,6 @@
 }
 #fastSearch svg {
   display: inline-block;
-  position: absolute;
   top: 0;
   right:0;
 }

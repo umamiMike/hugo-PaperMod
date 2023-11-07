@@ -37,7 +37,7 @@ right: 0;
 display: block;
 background: var(--content);
 height: 2px;
-width: 1em;
+width: 1rem;
 border-radius: 2px;
 position: relative;
 }
