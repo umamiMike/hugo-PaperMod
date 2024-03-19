@@ -1,5 +1,3 @@
-/* Utility Classes */
-.red {
   color: red;
 }
 .included {
@@ -217,7 +215,7 @@ display: none;
     flex-wrap: wrap;
     /* max-width: 400px; */
     margin: 0 auto;
-}
+
 
 .button {
     background: var(--tertiary);
