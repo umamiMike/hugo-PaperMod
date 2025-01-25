@@ -1,20 +1,12 @@
-/* Utility Classes */
-.red {
-  color: red;
-}
-.included {
-  /* font-size: 0.92rem; */
-}
 .foo {
   align-items: center;
-width: 40%;
-/* margin-left: 25%; */
+  width: 40%;
 }
 
 .index-content a {
 
 
-color: var(--link);
+  color: var(--link);
 }
 
 .bold {
@@ -30,7 +22,7 @@ color: var(--link);
 }
 
 .main a:visited {
-color: var(--link)
+  color: var(--link)
 }
 
 .content {
@@ -40,6 +32,7 @@ color: var(--link)
   align-items: stretch;
   flex-flow: column nowrap;
 }
+
 .sections {
   display: flex;
   flex-wrap: wrap;
@@ -51,12 +44,13 @@ color: var(--link)
 .connexions {
   display: flex;
   flex-wrap: wrap;
-gap: 4px;
-padding: 4px;
+  gap: 4px;
+  padding: 4px;
 }
-.connexions > * {
-width: 30%;
-border: solid 1px var(--tertiary);
+
+.connexions>* {
+  width: 30%;
+  border: solid 1px var(--tertiary);
 }
 
 .posts {
@@ -98,6 +92,7 @@ border: solid 1px var(--tertiary);
 .social-icons a:not(:last-of-type) {
   margin-inline-end: 12px;
 }
+
 .social-icons a svg {
   height: 26px;
   width: 26px;
@@ -152,7 +147,7 @@ pre:hover .copy-code {
 }
 
 .mermaid-container {
-margin-top: 1em;
+  margin-top: 1em;
   background-color: rgb(224, 225, 224);
   display: block;
   max-width: 100%;
@@ -162,22 +157,24 @@ margin-top: 1em;
 
 
 label img {
-z-index: 1000;
-width:20px;
-display: inline-block;
-margin: 4px;
+  z-index: 1000;
+  width: 20px;
+  display: inline-block;
+  margin: 4px;
 
 
 }
+
 .fullscreen {
-z-index: 1000;
+  z-index: 1000;
 }
+
 .nodeLabel {
-max-width: 200px;
+  max-width: 200px;
 }
 
 .fullscreenToggle {
-display: none;
+  display: none;
 }
 
 .svg-container {
@@ -188,52 +185,46 @@ display: none;
 
 
 .profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    margin-bottom: 100px;
-    margin-top: 20px;
-}
-
-.main .profile {
-    /* align-items: center; */
-    /* min-height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--gap) * 8)); */
-  /* min-height: 70vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 20px;
 }
 
 .profile .profile_inner h1 {
-    padding: 12px 0;
+  padding: 12px 0;
 }
 
 .profile img {
-    display: inline-table;
-    border-radius: 50%;
-    pointer-events: none;
-    aspect-ratio: 1 / 1;
+  display: inline-table;
+  border-radius: 50%;
+  pointer-events: none;
+  aspect-ratio: 1 / 1;
 }
 
 .buttons {
-    flex-wrap: wrap;
-    /* max-width: 400px; */
-    margin: 0 auto;
-}
+  flex-wrap: wrap;
+  /* max-width: 400px; */
+  margin: 0 auto;
+  }
 
-.button {
+  .button {
     background: var(--tertiary);
     border-radius: var(--radius);
     margin: 8px;
     padding: 6px;
     transition: transform 0.1s;
-}
+  }
 
-.button-inner {
+  .button-inner {
     padding: 0 8px;
-}
+  }
 
-.button:active {
+  .button:active {
     transform: scale(0.96);
-}
+  }
 
 
 
@@ -241,6 +232,7 @@ display: none;
     display: block;
 
   }
+
   .entry-body a {
     font-size: 1.2em;
   }
