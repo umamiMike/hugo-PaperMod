@@ -17,6 +17,7 @@
 // Function to show the modal
 function showModal() {
   var modal = document.querySelector('.search-container');
+  modal.style.display = 'block';
 }
 
 // Function to hide the modal
@@ -25,19 +26,16 @@ function hideModal() {
   modal.style.display = 'none';
 }
 
-
-document.addEventListener
+document.addEventListener('DOMContentLoaded', function () {
   var searchBox = document.querySelector('#searchInput');
 
   searchBox.addEventListener('input', function() {
     if (searchBox.value === '') {
-      console.log("I am the in the event listener and I should be able to hide the modal")
-      hideModal()
-      console.log("i should really close the modal  now")
-      // Perform actions when the search box is empty
+      hideModal();
+    } else {
+      showModal();
     }
-   showModal()
-  
   });
+});
 
  </script>

@@ -11,14 +11,11 @@ var resultsAvailable = false; // Did we get any search results?
 // The main keyboard event listener running the show
 //
 document.addEventListener("keydown", function (event) {
-  loadSearch(); // loads our json data and builds fuse.js search index
-  firstRun = false; // let's never do this again
-  // CMD-/ to show / hide Search
-  if (event.which == 191) {
-    // Load json search index if first time invoking search
-    // Means we don't load json unless searches are going to happen; keep user payload small unless needed
-    if (firstRun) {
-    }
+  // Load json search index the first time a key is pressed; keep user
+  // payload small unless a search is actually going to happen
+  if (firstRun) {
+    loadSearch();
+    firstRun = false;
   }
 
   // // Allow ESC (27) to close search box
@@ -114,13 +111,11 @@ function loadSearch() {
 // in the search box
 //
 function executeSearch(term) {
+  if (!fuse) return; // index hasn't finished loading yet
+
   let results = fuse.search(term); // the actual query being run using fuse.js
 
   const limitedResults = results.slice(0, 100);
-  const set_of_limited_results = new Set(limitedResults)
-
-  console.log(limitedResults)
-  console.log(set_of_limited_results)
   const searchitems = limitedResults
     .filter((ob) => ob.item.title)
     .map((ob) => {
